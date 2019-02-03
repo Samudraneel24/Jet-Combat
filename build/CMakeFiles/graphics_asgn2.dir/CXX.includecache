@@ -1,0 +1,124 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.cpp
+ball.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/color.cpp
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/input.cpp
+iostream
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.cpp
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+timer.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.h
+ball.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+iostream
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/nonedit.cpp
+iostream
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/other_handlers.cpp
+iostream
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtx/transform.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.cpp
+timer.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.h
+GLFW/glfw3.h
+-
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.h
+

@@ -1,0 +1,3 @@
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/rebuild_cache.dir
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/edit_cache.dir
