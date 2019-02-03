@@ -123,6 +123,33 @@ graphics_asgn2/fast:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/build
 .PHONY : graphics_asgn2/fast
 
+src/ThreeD.o: src/ThreeD.cpp.o
+
+.PHONY : src/ThreeD.o
+
+# target to build an object file
+src/ThreeD.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o
+.PHONY : src/ThreeD.cpp.o
+
+src/ThreeD.i: src/ThreeD.cpp.i
+
+.PHONY : src/ThreeD.i
+
+# target to preprocess a source file
+src/ThreeD.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.i
+.PHONY : src/ThreeD.cpp.i
+
+src/ThreeD.s: src/ThreeD.cpp.s
+
+.PHONY : src/ThreeD.s
+
+# target to generate assembly for a file
+src/ThreeD.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.s
+.PHONY : src/ThreeD.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... graphics_asgn2"
 	@echo "... edit_cache"
+	@echo "... src/ThreeD.o"
+	@echo "... src/ThreeD.i"
+	@echo "... src/ThreeD.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"

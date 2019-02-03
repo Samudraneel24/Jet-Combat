@@ -1,6 +1,7 @@
 #include "main.h"
 #include "timer.h"
 #include "ball.h"
+#include "ThreeD.h"
 
 using namespace std;
 
@@ -14,12 +15,15 @@ GLFWwindow *window;
 **************************/
 
 Ball ball1;
+ThreeD C;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 int counter = 0;
 
-int cam_angle = 1;
+int cam_option = 1;
+
+float cam_theta = 0, cam_phi = 0;
 
 Timer t60(1.0 / 60);
 
@@ -36,13 +40,18 @@ void draw() {
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 eye(3, 3, 3);
-    if(cam_angle == 1)
-        eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
+    if(cam_option == 1)
+        eye = {0, 10, 10};
     	// glm::vec3 eye (0, 0, 0);			// First Person
-    else if(cam_angle == 2)
-    	eye = {3, 3, 3};
-    else if(cam_angle == 3)
-        eye = {0, 0, 0};
+    else if(cam_option == 2){
+        float cam_x = 10*sin(cam_theta)*cos(cam_phi);
+        float cam_y = 10*sin(cam_theta)*sin(cam_phi);
+        float cam_z = 10*cos(cam_theta);
+    	eye = {cam_x, cam_y, cam_z};
+    }
+    else if(cam_option == 3)
+        eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
+
     counter++;
     	// glm::vec3 eye (3, 3, 3);			
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
@@ -51,7 +60,7 @@ void draw() {
     glm::vec3 up (0, 1, 0);
 
     // Compute Camera matrix (view)
-    Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
+    Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for ThreeD
     // Don't change unless you are sure!!
     // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
@@ -65,26 +74,38 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    ball1.draw(VP);
+    // ball1.draw(VP);
+    C.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
+    int up  = glfwGetKey(window, GLFW_KEY_UP);
+    int down  = glfwGetKey(window, GLFW_KEY_DOWN);
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int c = glfwGetKey(window, GLFW_KEY_C);
     if (c && counter > 15) {
-        if(cam_angle == 1)
-            cam_angle = 2;
-        else if(cam_angle == 2)
-            cam_angle = 3;
-        else if(cam_angle == 3)
-            cam_angle = 1;
+        if(cam_option == 1)
+            cam_option = 2;
+        else if(cam_option == 2)
+            cam_option = 3;
+        else if(cam_option == 3)
+            cam_option = 1;
         counter = 0;
     }
+    if(left)
+        cam_theta += 0.2;
+    if(right)
+        cam_theta -= 0.2;
+    if(up)
+        cam_phi += 0.2;
+    if(down)
+        cam_phi -= 0.2;
 }
 
 void tick_elements() {
-    ball1.tick();
+    // ball1.tick();
+    C.tick();
     // camera_rotation_angle += 1;
 }
 
@@ -94,7 +115,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
 
-    ball1       = Ball(0, 0, COLOR_RED);
+    // ball1       = Ball(0, 0, COLOR_RED);
+    C = ThreeD(50, 0, 0, 0, 0.5, 0.5, 3.0, COLOR_RED, COLOR_RED, COLOR_BLACK );
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -159,5 +181,5 @@ void reset_screen() {
     float bottom = screen_center_y - 4 / screen_zoom;
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
-    Matrices.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
+    Matrices.projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
 }
