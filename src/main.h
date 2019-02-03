@@ -21,6 +21,12 @@ struct color_t {
     int b;
 };
 
+struct Point{
+    float x;
+    float y;
+    float z;
+};
+
 // nonedit.cpp
 GLFWwindow *initGLFW(int width, int height);
 GLuint     LoadShaders(const char *vertex_file_path, const char *fragment_file_path);

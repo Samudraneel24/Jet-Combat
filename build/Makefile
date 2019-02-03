@@ -150,6 +150,33 @@ src/ThreeD.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.s
 .PHONY : src/ThreeD.cpp.s
 
+src/aeroplane.o: src/aeroplane.cpp.o
+
+.PHONY : src/aeroplane.o
+
+# target to build an object file
+src/aeroplane.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o
+.PHONY : src/aeroplane.cpp.o
+
+src/aeroplane.i: src/aeroplane.cpp.i
+
+.PHONY : src/aeroplane.i
+
+# target to preprocess a source file
+src/aeroplane.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.i
+.PHONY : src/aeroplane.cpp.i
+
+src/aeroplane.s: src/aeroplane.cpp.s
+
+.PHONY : src/aeroplane.s
+
+# target to generate assembly for a file
+src/aeroplane.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.s
+.PHONY : src/aeroplane.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -339,6 +366,33 @@ src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
+src/triangle.o: src/triangle.cpp.o
+
+.PHONY : src/triangle.o
+
+# target to build an object file
+src/triangle.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o
+.PHONY : src/triangle.cpp.o
+
+src/triangle.i: src/triangle.cpp.i
+
+.PHONY : src/triangle.i
+
+# target to preprocess a source file
+src/triangle.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.i
+.PHONY : src/triangle.cpp.i
+
+src/triangle.s: src/triangle.cpp.s
+
+.PHONY : src/triangle.s
+
+# target to generate assembly for a file
+src/triangle.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.s
+.PHONY : src/triangle.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -351,6 +405,9 @@ help:
 	@echo "... src/ThreeD.o"
 	@echo "... src/ThreeD.i"
 	@echo "... src/ThreeD.s"
+	@echo "... src/aeroplane.o"
+	@echo "... src/aeroplane.i"
+	@echo "... src/aeroplane.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
@@ -372,6 +429,9 @@ help:
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/triangle.o"
+	@echo "... src/triangle.i"
+	@echo "... src/triangle.s"
 .PHONY : help
 
 

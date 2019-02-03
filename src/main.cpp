@@ -2,6 +2,7 @@
 #include "timer.h"
 #include "ball.h"
 #include "ThreeD.h"
+#include "aeroplane.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ GLFWwindow *window;
 
 Ball ball1;
 ThreeD C;
+Aeroplane Plane;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -41,7 +43,7 @@ void draw() {
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 eye(3, 3, 3);
     if(cam_option == 1)
-        eye = {0, 10, 10};
+        eye = {0, 10, -10};
     	// glm::vec3 eye (0, 0, 0);			// First Person
     else if(cam_option == 2){
         float cam_x = 10*sin(cam_theta)*cos(cam_phi);
@@ -75,7 +77,7 @@ void draw() {
 
     // Scene render
     // ball1.draw(VP);
-    C.draw(VP);
+    Plane.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -105,7 +107,7 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     // ball1.tick();
-    C.tick();
+    Plane.tick();
     // camera_rotation_angle += 1;
 }
 
@@ -116,7 +118,9 @@ void initGL(GLFWwindow *window, int width, int height) {
     // Create the models
 
     // ball1       = Ball(0, 0, COLOR_RED);
-    C = ThreeD(50, 0, 0, 0, 0.5, 0.5, 3.0, COLOR_RED, COLOR_RED, COLOR_BLACK );
+    // C = ThreeD(50, 0, 0, 0, 0.5, 0.5, 3.0, COLOR_RED, COLOR_RED, COLOR_BLACK );
+
+    Plane = Aeroplane(0, 0, 0);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

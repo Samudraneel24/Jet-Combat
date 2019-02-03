@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/input.cpp.o"
@@ -7,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o"
   "graphics_asgn2.pdb"
   "graphics_asgn2"
 )

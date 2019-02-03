@@ -5,6 +5,12 @@ CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/ThreeD.cpp
 CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/ThreeD.h
+CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/aeroplane.cpp
+CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/aeroplane.h
+CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/triangle.h
+
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/main.h
@@ -16,10 +22,12 @@ CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ThreeD.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/timer.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/triangle.h
 
 CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
@@ -29,4 +37,8 @@ CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/other_handlers.cp
 
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.h
+
+CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o: ../src/triangle.cpp
+CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o: ../src/triangle.h
 
