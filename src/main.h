@@ -6,6 +6,8 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
+#include <algorithm>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -14,6 +16,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
+using namespace std;
 
 struct color_t {
     int r;
@@ -88,5 +92,6 @@ extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
 extern const color_t COLOR_BACKGROUND;
+extern const color_t COLOR_SEABLUE;
 
 #endif

@@ -3,6 +3,8 @@
 #include "ball.h"
 #include "ThreeD.h"
 #include "aeroplane.h"
+#include "rectangle.h"
+#include "hill.h"
 
 using namespace std;
 
@@ -16,8 +18,9 @@ GLFWwindow *window;
 **************************/
 
 Ball ball1;
-ThreeD C;
 Aeroplane Plane;
+Rectangle Sea;
+std::vector<Hill> HillArr;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -42,24 +45,34 @@ void draw() {
     // Eye - Location of camera. Don't change unless you are sure!!
     // glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
     glm::vec3 eye(3, 3, 3);
-    if(cam_option == 1)
-        eye = {0, 10, -10};
+    glm::vec3 up (0, 1, 0);
+    glm::vec3 target (0, 0, 0);
+
+    if(cam_option == 1){
+        eye = {0, Plane.position.y + 3, Plane.position.z - 10};
+        up = {0, 1, 0};
+        target = {Plane.position.x, Plane.position.y, Plane.position.z};
+    }
     	// glm::vec3 eye (0, 0, 0);			// First Person
     else if(cam_option == 2){
         float cam_x = 10*sin(cam_theta)*cos(cam_phi);
         float cam_y = 10*sin(cam_theta)*sin(cam_phi);
         float cam_z = 10*cos(cam_theta);
     	eye = {cam_x, cam_y, cam_z};
+        up = {0, 1, 0};
+        target = {0, 0, 0};
     }
-    else if(cam_option == 3)
-        eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
+    else if(cam_option == 3){
+        eye = {0, 50, 0};
+        up = {0, 0, 1};
+        target = {0, 0, 0};
+    }
+        // eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
 
     counter++;
     	// glm::vec3 eye (3, 3, 3);			
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
-    glm::vec3 target (0, 0, 0);
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
-    glm::vec3 up (0, 1, 0);
 
     // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for ThreeD
@@ -77,7 +90,10 @@ void draw() {
 
     // Scene render
     // ball1.draw(VP);
+    Sea.draw(VP);
     Plane.draw(VP);
+    for(int i = 0; i<HillArr.size(); i++)
+        HillArr[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -86,6 +102,10 @@ void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int c = glfwGetKey(window, GLFW_KEY_C);
+    int w = glfwGetKey(window, GLFW_KEY_W);
+    int s = glfwGetKey(window, GLFW_KEY_S);
+    int a = glfwGetKey(window, GLFW_KEY_A);
+    int d = glfwGetKey(window, GLFW_KEY_D);
     if (c && counter > 15) {
         if(cam_option == 1)
             cam_option = 2;
@@ -95,32 +115,58 @@ void tick_input(GLFWwindow *window) {
             cam_option = 1;
         counter = 0;
     }
-    if(left)
+    if(a)
         cam_theta += 0.2;
-    if(right)
+    if(d)
         cam_theta -= 0.2;
-    if(up)
+    if(w)
         cam_phi += 0.2;
-    if(down)
+    if(s)
         cam_phi -= 0.2;
+    if(up)
+        Plane.forward();
+    if(right)
+        Plane.right();
 }
 
 void tick_elements() {
-    // ball1.tick();
+    Sea.tick();
     Plane.tick();
+    for(int i = 0; i<HillArr.size(); i++)
+        HillArr[i].tick();
     // camera_rotation_angle += 1;
 }
 
 /* Initialize the OpenGL rendering properties */
 /* Add all the models to be created here */
 void initGL(GLFWwindow *window, int width, int height) {
+    srand(time(NULL));
+
     /* Objects should be created before any other gl function and shaders */
     // Create the models
 
     // ball1       = Ball(0, 0, COLOR_RED);
     // C = ThreeD(50, 0, 0, 0, 0.5, 0.5, 3.0, COLOR_RED, COLOR_RED, COLOR_BLACK );
 
-    Plane = Aeroplane(0, 0, 0);
+    Plane = Aeroplane(0, 2, 0);
+    Point a, b, c, d;
+    a.x = -1000, a.y = 0, a.z = -1000;
+    b.x = 1000, b.y = 0, b.z = -1000;
+    c.x = 1000, c.y = 0, c.z = 1000;
+    d.x = -1000, d.y = 0, d.z = 1000;
+    Sea = Rectangle(a, b, c, d, COLOR_SEABLUE);
+
+    for(int i = -20; i< 20; i++){
+        int left = i*50;
+        int right = left + 50;
+        for(int j = -20; j < 20; j++){
+            int bottom = j*50;
+            int up = bottom + 50;
+            int x = left + 15 + rand()%20;
+            int z = bottom + 15 + rand()%20;
+            HillArr.push_back(Hill(x, z));
+        }
+    }
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -146,8 +192,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 600;
-    int height = 600;
+    int width  = 1000;
+    int height = 1000;
 
     window = initGLFW(width, height);
 

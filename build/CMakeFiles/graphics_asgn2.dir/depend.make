@@ -18,14 +18,22 @@ CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/ThreeD.h
+CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
+CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.h
+CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/triangle.h
+
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/timer.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/triangle.h
 
@@ -34,6 +42,10 @@ CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
 
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
+
+CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/rectangle.cpp
+CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/rectangle.h
 
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.h

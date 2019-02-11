@@ -3,14 +3,13 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 
-ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, float length, color_t face1color, color_t face2color,color_t bodycolor) {
+ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, float length, float rotation, color_t face1color, color_t face2color,color_t bodycolor) {
     this->position = glm::vec3(x, y, z);
-    this->rotation = 0;
     this->radius1 = radius1;
     this->radius2 = radius2;
     this->length = length;
     this->n = n;
-    // this->rotation = 90.0;
+    this->rotation = rotation;
     speed = 1;
     GLfloat face1[9*n], face2[9*n], body[18*n];
     float angle = ( 2.0*M_PI / float(n));
@@ -85,9 +84,9 @@ void ThreeD::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
-void ThreeD::tick() {
-    // this->rotation += speed;
-    // this->position.x -= speed;
-    // this->position.y -= speed;
+void ThreeD::tick(float speedx, float speedy, float speedz) {
+    this->position.x += speedx;
+    this->position.y += speedy;
+    this->position.z += speedz;
 }
 
