@@ -153,6 +153,7 @@ void Aeroplane::draw(glm::mat4 VP) {
     // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
     // glm::mat4 rotate = glm::translate(glm::vec3(Aeroplane_x, Aeroplane_y, Aeroplane_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-Aeroplane_x, -Aeroplane_y, -Aeroplane_z));
     
+    // Matrices.model *= translate*rotatey;
     Matrices.model *= (translate * rotatey * rotatez);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
@@ -174,6 +175,9 @@ void Aeroplane::tick(int no_op) {
     this->speedz -= 0.01;
     if(this->speedz < 0.0)
         this->speedz = 0.0;
+    this->speedx -= 0.01;
+    if(this->speedx < 0.0)
+        this->speedx = 0.0;
     if(no_op == 1){
         if(this->rot_z < 0.0)
             this->rot_z += 2.0;
@@ -186,8 +190,10 @@ void Aeroplane::tick(int no_op) {
 }
 
 void Aeroplane::forward(){
-    if(this->speedz <= 0.27)
-        this->speedz += 0.03;
+    if(this->speedz <= 0.27*cos(this->rot_y*(M_PI/180.0)))
+        this->speedz += 0.03*cos(this->rot_y*(M_PI/180.0));
+    if(this->speedx <= 0.27*(-sin(this->rot_y*(M_PI/180.0))))
+        this->speedx += 0.03*(-sin(this->rot_y*(M_PI/180.0)));
 }
 
 void Aeroplane::right(){

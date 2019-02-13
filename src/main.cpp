@@ -50,23 +50,31 @@ void draw() {
     glm::vec3 target (0, 0, 0);
 
     if(cam_option == 1){
-        eye = {0, Plane.position.y + 3, Plane.position.z - 10};
+        // Follow_cam_view
+        eye = {Plane.position.x + 10*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y + 3, Plane.position.z - 10*cos(Plane.rot_y*(M_PI/180.0))};
         up = {0, 1, 0};
         target = {Plane.position.x, Plane.position.y, Plane.position.z};
     }
-    	// glm::vec3 eye (0, 0, 0);			// First Person
     else if(cam_option == 2){
+        // Top_view
+        eye = {Plane.position.x, Plane.position.y + 50, Plane.position.z};
+        up = {0, 0, 1};
+        target = {Plane.position.x, Plane.position.y, Plane.position.z};
+    }
+    else if(cam_option == 3){
+        // Plane_view
+        eye = {Plane.position.x + 2.5*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y + 0.6, Plane.position.z - 2.5*cos(Plane.rot_y*(M_PI/180.0))};
+        up = {0, 1, 0};
+        target = {Plane.position.x + 50*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z- 50*cos(Plane.rot_y*(M_PI/180.0))};
+    }
+    else if(cam_option == 4){
+        // Helicopter_view
         float cam_x = 10*sin(cam_theta)*cos(cam_phi);
         float cam_y = 10*sin(cam_theta)*sin(cam_phi);
         float cam_z = 10*cos(cam_theta);
     	eye = {cam_x, cam_y, cam_z};
         up = {0, 1, 0};
         target = {0, 0, 0};
-    }
-    else if(cam_option == 3){
-        eye = {Plane.position.x, Plane.position.y + 50, Plane.position.z};
-        up = {0, 0, 1};
-        target = {Plane.position.x, Plane.position.y, Plane.position.z};
     }
         // eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
 
@@ -139,7 +147,7 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
-    cout<<Plane.rot_y<<endl;
+    // cout<<Plane.rot_y<<endl;
     Sea.tick();
     Plane.tick(no_op);
     for(int i = 0; i<HillArr.size(); i++)
