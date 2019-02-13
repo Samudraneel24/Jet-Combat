@@ -3,13 +3,15 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 
-ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, float length, float rotation, color_t face1color, color_t face2color,color_t bodycolor) {
+ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, float length, float rot_x, float rot_y, float rot_z, color_t face1color, color_t face2color,color_t bodycolor) {
     this->position = glm::vec3(x, y, z);
     this->radius1 = radius1;
     this->radius2 = radius2;
     this->length = length;
     this->n = n;
-    this->rotation = rotation;
+    this->rot_x = rot_x;
+    this->rot_y = rot_y;
+    this->rot_z = rot_z;
     speed = 1;
     GLfloat face1[9*n], face2[9*n], body[18*n];
     float angle = ( 2.0*M_PI / float(n));
@@ -66,12 +68,15 @@ ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, f
     this->object3 = create3DObject(GL_TRIANGLES, 6*n, body, bodycolor, GL_FILL);
 }
 
-void ThreeD::draw(glm::mat4 VP) {
+void ThreeD::draw(glm::mat4 VP, float plane_x, float plane_y, float plane_z) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
-    glm::mat4 rotate    = glm::rotate((float) (this->rotation * M_PI / 180.0f), glm::vec3(1, 0, 0));
+    // glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
+    glm::mat4 rotatey    = glm::rotate((float) (-this->rot_y * M_PI / 180.0f), glm::vec3(0, 1, 0));
+    // glm::mat4 rotatez    = glm::rotate((float) (this->rot_z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
-    // rotate          = rotate * glm::translate(glm::vec3(0, -0.6, 0));
+    // glm::mat4 rotate = glm::translate(glm::vec3(plane_x, plane_y, plane_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-plane_x, -plane_y, -plane_z));
+    glm::mat4 rotate = rotatey ;
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
@@ -84,9 +89,12 @@ void ThreeD::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
-void ThreeD::tick(float speedx, float speedy, float speedz) {
+void ThreeD::tick(float speedx, float speedy, float speedz, float rot_x, float rot_y, float rot_z) {
     this->position.x += speedx;
     this->position.y += speedy;
     this->position.z += speedz;
+    this->rot_z = rot_z;
+    this->rot_x = rot_x;
+    this->rot_y = rot_y;
 }
 

@@ -5,11 +5,9 @@ CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/ThreeD.cpp
 CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o: ../src/main.h
 
-CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/aeroplane.cpp
 CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/main.h
-CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o: ../src/triangle.h
 
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.h

@@ -1,6 +1,4 @@
 #include "main.h"
-#include "ThreeD.h"
-#include "triangle.h"
 
 #define GLM_ENABLE_EXPERIMENTAL
 #ifndef Aeroplane_H
@@ -13,16 +11,21 @@ public:
     glm::vec3 position;
     void draw(glm::mat4 VP);
     void set_position(float x, float y, float z);
-    void tick();
+    void tick(int no_op);
     void forward();
     void right();
-    ThreeD Nose;
-    ThreeD Body;
-    Triangle Leftwing, Rightwing;
+    void left();
     float speedx, speedy, speedz;
     float rot_x, rot_y, rot_z;
 private:
-    VAO *object;
+    VAO* object1;
+    VAO* object2;
+    VAO* object3;
+    VAO* lwing;
+    VAO* rwing;
+    VAO* object4;
+    VAO* object5;
+    VAO* object6;
 };
 
 #endif // Aeroplane_H

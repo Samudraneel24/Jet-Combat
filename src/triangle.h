@@ -9,9 +9,9 @@ public:
     Triangle() {}
     Triangle(Point a, Point b, Point c, color_t color);
     glm::vec3 position;
-    void draw(glm::mat4 VP);
+    void draw(glm::mat4 VP, float x, float y, float z);
     void set_position(float x, float y, float z);
-    void tick(float speedx, float speedy, float speedz, float rot_z);
+    void tick(float speedx, float speedy, float speedz, float rot_x, float rot_y, float rot_z);
 	float speedx, speedy, speedz;
     float rot_x, rot_y, rot_z;
 private:

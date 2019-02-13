@@ -27,6 +27,7 @@ float camera_rotation_angle = 0;
 int counter = 0;
 
 int cam_option = 1;
+int no_op = 1;
 
 float cam_theta = 0, cam_phi = 0;
 
@@ -63,9 +64,9 @@ void draw() {
         target = {0, 0, 0};
     }
     else if(cam_option == 3){
-        eye = {0, 50, 0};
+        eye = {Plane.position.x, Plane.position.y + 50, Plane.position.z};
         up = {0, 0, 1};
-        target = {0, 0, 0};
+        target = {Plane.position.x, Plane.position.y, Plane.position.z};
     }
         // eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
 
@@ -125,13 +126,22 @@ void tick_input(GLFWwindow *window) {
         cam_phi -= 0.2;
     if(up)
         Plane.forward();
-    if(right)
+    if(right){
         Plane.right();
+        no_op = 0;
+    }
+    else if(left){
+        Plane.left();
+        no_op = 0;
+    }
+    else
+        no_op = 1;
 }
 
 void tick_elements() {
+    cout<<Plane.rot_y<<endl;
     Sea.tick();
-    Plane.tick();
+    Plane.tick(no_op);
     for(int i = 0; i<HillArr.size(); i++)
         HillArr[i].tick();
     // camera_rotation_angle += 1;
@@ -150,20 +160,20 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     Plane = Aeroplane(0, 2, 0);
     Point a, b, c, d;
-    a.x = -1000, a.y = 0, a.z = -1000;
-    b.x = 1000, b.y = 0, b.z = -1000;
-    c.x = 1000, c.y = 0, c.z = 1000;
-    d.x = -1000, d.y = 0, d.z = 1000;
+    a.x = -500, a.y = 0, a.z = -500;
+    b.x = 500, b.y = 0, b.z = -500;
+    c.x = 500, c.y = 0, c.z = 500;
+    d.x = -500, d.y = 0, d.z = 500;
     Sea = Rectangle(a, b, c, d, COLOR_SEABLUE);
 
-    for(int i = -20; i< 20; i++){
-        int left = i*50;
-        int right = left + 50;
-        for(int j = -20; j < 20; j++){
-            int bottom = j*50;
-            int up = bottom + 50;
-            int x = left + 15 + rand()%20;
-            int z = bottom + 15 + rand()%20;
+    for(int i = -5; i< 5; i++){
+        int left = i*100;
+        int right = left + 100;
+        for(int j = -5; j < 5; j++){
+            int bottom = j*100;
+            int up = bottom + 100;
+            int x = left + 25 + rand()%50;
+            int z = bottom + 25 + rand()%50;
             HillArr.push_back(Hill(x, z));
         }
     }
