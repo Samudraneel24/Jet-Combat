@@ -15,7 +15,8 @@ public:
     void forward();
     void right();
     void left();
-    float speedx, speedy, speedz;
+    void up();
+    float speedx, speedy, speedz, speedxz;
     float rot_x, rot_y, rot_z;
 private:
     VAO* object1;

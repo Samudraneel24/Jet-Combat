@@ -71,12 +71,11 @@ ThreeD::ThreeD(int n, float x, float y, float z, float radius1, float radius2, f
 void ThreeD::draw(glm::mat4 VP, float plane_x, float plane_y, float plane_z) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
-    // glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
+    glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
     glm::mat4 rotatey    = glm::rotate((float) (-this->rot_y * M_PI / 180.0f), glm::vec3(0, 1, 0));
-    // glm::mat4 rotatez    = glm::rotate((float) (this->rot_z * M_PI / 180.0f), glm::vec3(0, 0, 1));
+    glm::mat4 rotatez    = glm::rotate((float) (this->rot_z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
-    // glm::mat4 rotate = glm::translate(glm::vec3(plane_x, plane_y, plane_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-plane_x, -plane_y, -plane_z));
-    glm::mat4 rotate = rotatey ;
+    glm::mat4 rotate = rotatey * rotatex * rotatez;
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);

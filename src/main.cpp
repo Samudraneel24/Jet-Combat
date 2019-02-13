@@ -107,9 +107,9 @@ void draw() {
 
 void tick_input(GLFWwindow *window) {
     int up  = glfwGetKey(window, GLFW_KEY_UP);
-    int down  = glfwGetKey(window, GLFW_KEY_DOWN);
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int space  = glfwGetKey(window, GLFW_KEY_SPACE);
     int c = glfwGetKey(window, GLFW_KEY_C);
     int w = glfwGetKey(window, GLFW_KEY_W);
     int s = glfwGetKey(window, GLFW_KEY_S);
@@ -144,6 +144,8 @@ void tick_input(GLFWwindow *window) {
     }
     else
         no_op = 1;
+    if(space)
+        Plane.up();
 }
 
 void tick_elements() {

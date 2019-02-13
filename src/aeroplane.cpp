@@ -6,7 +6,7 @@
 Aeroplane::Aeroplane(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rot_x = this->rot_y = this->rot_z = 0;
-    this->speedx = this->speedy = this->speedz = 0;
+    this->speedx = this->speedy = this->speedz = this->speedxz = 0;
     int n = 50;
     GLfloat face1[9*n], face2[9*n], body[18*n];
     float angle = ( 2.0*M_PI / float(n));
@@ -172,28 +172,28 @@ void Aeroplane::set_position(float x, float y, float z) {
 }
 
 void Aeroplane::tick(int no_op) {
-    this->speedz -= 0.01;
-    if(this->speedz < 0.0)
-        this->speedz = 0.0;
-    this->speedx -= 0.01;
-    if(this->speedx < 0.0)
-        this->speedx = 0.0;
+    this->speedxz -= 0.01;
+    if(this->speedxz < 0.0)
+        this->speedxz = 0.0;
+    this->speedy -= 0.01;
     if(no_op == 1){
         if(this->rot_z < 0.0)
             this->rot_z += 2.0;
         else if(this->rot_z > 0)
             this->rot_z -= 2.0;
     }
-    this->position.x += this->speedx;
+    this->position.x += this->speedxz*(-sin(this->rot_y*(M_PI/180.0)));
     this->position.y += this->speedy;
-    this->position.z += this->speedz;
+    this->position.z += this->speedxz*cos(this->rot_y*(M_PI/180.0));
+    if(this->position.y < 0.0){
+        this->position.y = 0.0;
+        this->speedy = 0;
+    }
 }
 
 void Aeroplane::forward(){
-    if(this->speedz <= 0.27*cos(this->rot_y*(M_PI/180.0)))
-        this->speedz += 0.03*cos(this->rot_y*(M_PI/180.0));
-    if(this->speedx <= 0.27*(-sin(this->rot_y*(M_PI/180.0))))
-        this->speedx += 0.03*(-sin(this->rot_y*(M_PI/180.0)));
+    if(this->speedxz <= 0.27)
+        this->speedxz += 0.03;
 }
 
 void Aeroplane::right(){
@@ -208,4 +208,9 @@ void Aeroplane::left(){
     if(this->rot_z < -18.0)
         this->rot_z = -18.0;
     this->rot_y -= 1.5;
+}
+
+void Aeroplane::up(){
+    if(this->speedy <= 0.30)
+        this->speedy += 0.03;
 }

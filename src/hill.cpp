@@ -7,7 +7,7 @@ Hill::Hill(float x, float z){
     this->position = glm::vec3(x, 0, z);
     this->rotation = 0;
     this->BaseRadius = 6 + rand()%9;
-    this->TopBaseRadius = 6 + rand()%( max(1, this->BaseRadius - 6) );
+    this->TopBaseRadius = this->BaseRadius - 1;
     this->TopTopRadius = rand()%( max(1, this->TopBaseRadius/2 - 1 ) );
     this->Height = 1 + rand()%( max(1, this->TopBaseRadius - this->TopTopRadius - 1) );
     this->Base = ThreeD(50, x, 0, z, this->BaseRadius, this->BaseRadius, 0.2, 90, 0, 0, COLOR_GREEN, COLOR_GREEN, COLOR_GREEN);
