@@ -68,6 +68,12 @@ void draw() {
         target = {Plane.position.x + 50*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z- 50*cos(Plane.rot_y*(M_PI/180.0))};
     }
     else if(cam_option == 4){
+        // Tower_view
+        eye = {-5, 5, -5};
+        up = {0, 1, 0};
+        target = {Plane.position.x, Plane.position.y, Plane.position.z};
+    }
+    else if(cam_option == 5){
         // Helicopter_view
         float cam_x = 10*sin(cam_theta)*cos(cam_phi);
         float cam_y = 10*sin(cam_theta)*sin(cam_phi);
@@ -76,6 +82,8 @@ void draw() {
         up = {0, 1, 0};
         target = {0, 0, 0};
     }
+
+
         // eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
 
     counter++;
@@ -121,6 +129,10 @@ void tick_input(GLFWwindow *window) {
         else if(cam_option == 2)
             cam_option = 3;
         else if(cam_option == 3)
+            cam_option = 4;
+        else if(cam_option == 4)
+            cam_option = 5;
+        else
             cam_option = 1;
         counter = 0;
     }
