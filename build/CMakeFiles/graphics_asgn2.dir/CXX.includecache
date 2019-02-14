@@ -26,6 +26,36 @@ main.h
 main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.cpp
+aim.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/altitude.cpp
+iostream
+-
+fstream
+-
+algorithm
+-
+altitude.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/altitude.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+sevenseg.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/altitude.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+sevenseg.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.cpp
 ball.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.h
@@ -87,6 +117,12 @@ rectangle.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle.h
 hill.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/hill.h
+score.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.h
+altitude.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/altitude.h
+aim.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 iostream
@@ -169,6 +205,58 @@ main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle.h
 main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.cpp
+iostream
+-
+fstream
+-
+rectangle2d.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.cpp
+iostream
+-
+fstream
+-
+algorithm
+-
+score.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+sevenseg.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+sevenseg.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.cpp
+iostream
+-
+fstream
+-
+sevenseg.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+rectangle2d.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.h
+string
+-
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.cpp
 timer.h

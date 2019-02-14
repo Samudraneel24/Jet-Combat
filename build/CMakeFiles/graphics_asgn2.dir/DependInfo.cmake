@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ThreeD.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aeroplane.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/altitude.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/color.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/hill.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o"
@@ -14,6 +16,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/nonedit.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/other_handlers.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/score.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/triangle.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o"
   )

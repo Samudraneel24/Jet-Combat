@@ -5,11 +5,14 @@
 #include "aeroplane.h"
 #include "rectangle.h"
 #include "hill.h"
+#include "score.h"
+#include "altitude.h"
+#include "aim.h"
 
 using namespace std;
 
 
-GLMatrices Matrices;
+GLMatrices Matrices, Dashboard_matrix;
 GLuint     programID;
 GLFWwindow *window;
 
@@ -21,6 +24,9 @@ Ball ball1;
 Aeroplane Plane;
 Rectangle Sea;
 std::vector<Hill> HillArr;
+Score Sc;
+Altitude Alt;
+Aim A;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -28,6 +34,8 @@ int counter = 0;
 
 int cam_option = 1;
 int no_op = 1;
+int score = 0;
+// int altitude = 0;
 
 float cam_theta = 0, cam_phi = 0;
 
@@ -83,14 +91,13 @@ void draw() {
         target = {Plane.position.x, Plane.position.y, Plane.position.z};
     }
 
-
-        // eye  = {5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f)};
-
     counter++;
-    	// glm::vec3 eye (3, 3, 3);			
-    // Target - Where is the camera looking at.  Don't change unless you are sure!!
-    // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
 
+    glm::vec3 d_eye (0, 0, 1);
+    glm::vec3 d_target (0, 0, 0);
+    glm::vec3 d_up (0, 1, 0);
+
+    Dashboard_matrix.view = glm::lookAt(d_eye, d_target, d_up);
     // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for ThreeD
     // Don't change unless you are sure!!
@@ -99,18 +106,22 @@ void draw() {
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
     // Don't change unless you are sure!!
     glm::mat4 VP = Matrices.projection * Matrices.view;
+    glm::mat4 d_VP = Dashboard_matrix.projection * Dashboard_matrix.view;
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
     // Don't change unless you are sure!!
-    glm::mat4 MVP;  // MVP = Projection * View * Model
+    glm::mat4 MVP, d_MVP;  // MVP = Projection * View * Model
 
     // Scene render
     // ball1.draw(VP);
     Sea.draw(VP);
     Plane.draw(VP);
+    A.draw(VP);
     for(int i = 0; i<HillArr.size(); i++)
         HillArr[i].draw(VP);
+    Sc.draw(d_VP, score);
+    Alt.draw(d_VP, (int)(Plane.position.y * 10));
 }
 
 void tick_input(GLFWwindow *window) {
@@ -162,10 +173,13 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     // cout<<Plane.rot_y<<endl;
-    Sea.tick();
     Plane.tick(no_op);
+    Sea.tick();
     for(int i = 0; i<HillArr.size(); i++)
         HillArr[i].tick();
+    Sc.tick();
+    Alt.tick();
+    A.tick(Plane.position.x - 10*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z + 10*cos(Plane.rot_y*(M_PI/180.0)), Plane.rot_y);
     // camera_rotation_angle += 1;
 }
 
@@ -200,10 +214,15 @@ void initGL(GLFWwindow *window, int width, int height) {
         }
     }
 
+    Sc = Score(-3.8, -3.5);
+    Alt = Altitude(-3.8, -2.8);
+    A = Aim(6);
+
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
     Matrices.MatrixID = glGetUniformLocation(programID, "MVP");
+    Dashboard_matrix.MatrixID = glGetUniformLocation(programID, "d_MVP");
 
 
     reshapeWindow (window, width, height);
@@ -264,4 +283,5 @@ void reset_screen() {
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
     Matrices.projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
+    Dashboard_matrix.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
 }

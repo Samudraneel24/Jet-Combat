@@ -177,6 +177,60 @@ src/aeroplane.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.s
 .PHONY : src/aeroplane.cpp.s
 
+src/aim.o: src/aim.cpp.o
+
+.PHONY : src/aim.o
+
+# target to build an object file
+src/aim.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o
+.PHONY : src/aim.cpp.o
+
+src/aim.i: src/aim.cpp.i
+
+.PHONY : src/aim.i
+
+# target to preprocess a source file
+src/aim.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aim.cpp.i
+.PHONY : src/aim.cpp.i
+
+src/aim.s: src/aim.cpp.s
+
+.PHONY : src/aim.s
+
+# target to generate assembly for a file
+src/aim.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/aim.cpp.s
+.PHONY : src/aim.cpp.s
+
+src/altitude.o: src/altitude.cpp.o
+
+.PHONY : src/altitude.o
+
+# target to build an object file
+src/altitude.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o
+.PHONY : src/altitude.cpp.o
+
+src/altitude.i: src/altitude.cpp.i
+
+.PHONY : src/altitude.i
+
+# target to preprocess a source file
+src/altitude.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.i
+.PHONY : src/altitude.cpp.i
+
+src/altitude.s: src/altitude.cpp.s
+
+.PHONY : src/altitude.s
+
+# target to generate assembly for a file
+src/altitude.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.s
+.PHONY : src/altitude.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -393,6 +447,87 @@ src/rectangle.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.s
 .PHONY : src/rectangle.cpp.s
 
+src/rectangle2d.o: src/rectangle2d.cpp.o
+
+.PHONY : src/rectangle2d.o
+
+# target to build an object file
+src/rectangle2d.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o
+.PHONY : src/rectangle2d.cpp.o
+
+src/rectangle2d.i: src/rectangle2d.cpp.i
+
+.PHONY : src/rectangle2d.i
+
+# target to preprocess a source file
+src/rectangle2d.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.i
+.PHONY : src/rectangle2d.cpp.i
+
+src/rectangle2d.s: src/rectangle2d.cpp.s
+
+.PHONY : src/rectangle2d.s
+
+# target to generate assembly for a file
+src/rectangle2d.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.s
+.PHONY : src/rectangle2d.cpp.s
+
+src/score.o: src/score.cpp.o
+
+.PHONY : src/score.o
+
+# target to build an object file
+src/score.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/score.cpp.o
+.PHONY : src/score.cpp.o
+
+src/score.i: src/score.cpp.i
+
+.PHONY : src/score.i
+
+# target to preprocess a source file
+src/score.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/score.cpp.i
+.PHONY : src/score.cpp.i
+
+src/score.s: src/score.cpp.s
+
+.PHONY : src/score.s
+
+# target to generate assembly for a file
+src/score.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/score.cpp.s
+.PHONY : src/score.cpp.s
+
+src/sevenseg.o: src/sevenseg.cpp.o
+
+.PHONY : src/sevenseg.o
+
+# target to build an object file
+src/sevenseg.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o
+.PHONY : src/sevenseg.cpp.o
+
+src/sevenseg.i: src/sevenseg.cpp.i
+
+.PHONY : src/sevenseg.i
+
+# target to preprocess a source file
+src/sevenseg.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.i
+.PHONY : src/sevenseg.cpp.i
+
+src/sevenseg.s: src/sevenseg.cpp.s
+
+.PHONY : src/sevenseg.s
+
+# target to generate assembly for a file
+src/sevenseg.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.s
+.PHONY : src/sevenseg.cpp.s
+
 src/timer.o: src/timer.cpp.o
 
 .PHONY : src/timer.o
@@ -462,6 +597,12 @@ help:
 	@echo "... src/aeroplane.o"
 	@echo "... src/aeroplane.i"
 	@echo "... src/aeroplane.s"
+	@echo "... src/aim.o"
+	@echo "... src/aim.i"
+	@echo "... src/aim.s"
+	@echo "... src/altitude.o"
+	@echo "... src/altitude.i"
+	@echo "... src/altitude.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
@@ -486,6 +627,15 @@ help:
 	@echo "... src/rectangle.o"
 	@echo "... src/rectangle.i"
 	@echo "... src/rectangle.s"
+	@echo "... src/rectangle2d.o"
+	@echo "... src/rectangle2d.i"
+	@echo "... src/rectangle2d.s"
+	@echo "... src/score.o"
+	@echo "... src/score.i"
+	@echo "... src/score.s"
+	@echo "... src/sevenseg.o"
+	@echo "... src/sevenseg.i"
+	@echo "... src/sevenseg.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"

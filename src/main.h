@@ -70,6 +70,7 @@ struct GLMatrices {
 };
 
 extern GLMatrices Matrices;
+extern GLMatrices Dashboard_matrix;
 
 // ---- Logic ----
 
@@ -91,7 +92,9 @@ void reset_screen();
 extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
+extern const color_t COLOR_REALBLACK;
 extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_SEABLUE;
+extern const color_t COLOR_WHITE;
 
 #endif
