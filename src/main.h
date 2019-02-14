@@ -96,5 +96,7 @@ extern const color_t COLOR_REALBLACK;
 extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_SEABLUE;
 extern const color_t COLOR_WHITE;
+extern const color_t COLOR_GREY;
+extern const color_t COLOR_REALRED;
 
 #endif

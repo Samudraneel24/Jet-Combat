@@ -8,6 +8,7 @@
 #include "score.h"
 #include "altitude.h"
 #include "aim.h"
+#include "compass.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ std::vector<Hill> HillArr;
 Score Sc;
 Altitude Alt;
 Aim A;
+Compass C;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -122,6 +124,7 @@ void draw() {
         HillArr[i].draw(VP);
     Sc.draw(d_VP, score);
     Alt.draw(d_VP, (int)(Plane.position.y * 10));
+    C.draw(d_VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -180,6 +183,7 @@ void tick_elements() {
     Sc.tick();
     Alt.tick();
     A.tick(Plane.position.x - 10*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z + 10*cos(Plane.rot_y*(M_PI/180.0)), Plane.rot_y);
+    C.tick(Plane.rot_y);
     // camera_rotation_angle += 1;
 }
 
@@ -217,6 +221,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     Sc = Score(-3.8, -3.5);
     Alt = Altitude(-3.8, -2.8);
     A = Aim(6);
+    C = Compass(-3.0, 3.0);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -282,6 +287,6 @@ void reset_screen() {
     float bottom = screen_center_y - 4 / screen_zoom;
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
-    Matrices.projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
+    Matrices.projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 200.0f);
     Dashboard_matrix.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
 }

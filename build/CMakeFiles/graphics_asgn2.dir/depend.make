@@ -26,6 +26,10 @@ CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.cpp
+CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.h
+CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
@@ -38,6 +42,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aim.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/altitude.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h
