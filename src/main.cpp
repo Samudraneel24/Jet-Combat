@@ -63,9 +63,9 @@ void draw() {
     }
     else if(cam_option == 3){
         // Plane_view
-        eye = {Plane.position.x + 2.5*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y + 0.6, Plane.position.z - 2.5*cos(Plane.rot_y*(M_PI/180.0))};
+        eye = {Plane.position.x - 2.5*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y + 0.6, Plane.position.z + 2.5*cos(Plane.rot_y*(M_PI/180.0))};
         up = {0, 1, 0};
-        target = {Plane.position.x + 50*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z- 50*cos(Plane.rot_y*(M_PI/180.0))};
+        target = {Plane.position.x - 50*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z + 50*cos(Plane.rot_y*(M_PI/180.0))};
     }
     else if(cam_option == 4){
         // Tower_view
@@ -75,12 +75,12 @@ void draw() {
     }
     else if(cam_option == 5){
         // Helicopter_view
-        float cam_x = 10*sin(cam_theta)*cos(cam_phi);
-        float cam_y = 10*sin(cam_theta)*sin(cam_phi);
-        float cam_z = 10*cos(cam_theta);
+        float cam_x = Plane.position.x + 10*sin(cam_theta)*cos(cam_phi);
+        float cam_y = Plane.position.y + 10*sin(cam_theta)*sin(cam_phi);
+        float cam_z = Plane.position.z + 10*cos(cam_theta);
     	eye = {cam_x, cam_y, cam_z};
         up = {0, 1, 0};
-        target = {0, 0, 0};
+        target = {Plane.position.x, Plane.position.y, Plane.position.z};
     }
 
 
@@ -137,13 +137,13 @@ void tick_input(GLFWwindow *window) {
         counter = 0;
     }
     if(a)
-        cam_theta += 0.2;
-    if(d)
         cam_theta -= 0.2;
+    if(d)
+        cam_theta += 0.2;
     if(w)
-        cam_phi += 0.2;
-    if(s)
         cam_phi -= 0.2;
+    if(s)
+        cam_phi += 0.2;
     if(up)
         Plane.forward();
     if(right){
