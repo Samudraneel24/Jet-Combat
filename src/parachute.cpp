@@ -8,7 +8,7 @@ Parachute::Parachute(float x, float y, float z) {
     this->rot_y = this->rot_z = 0;
     this->rot_x = 90;
     this->speedx = this->speedz = 0;
-    this->speedy = -0.15;
+    this->speedy = -0.03;
     int n = 50;
     GLfloat top_data[9*n], string_data[9*n], color_data[9*n];
     float angle = ( 2.0*M_PI / float(n));

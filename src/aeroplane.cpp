@@ -147,14 +147,14 @@ Aeroplane::Aeroplane(float x, float y, float z) {
 void Aeroplane::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
-    // glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
+    glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
     glm::mat4 rotatey    = glm::rotate((float) (-this->rot_y * M_PI / 180.0f), glm::vec3(0, 1, 0));
     glm::mat4 rotatez    = glm::rotate((float) (this->rot_z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     // No need as coords centePINK at 0, 0, 0 of cube arouund which we waant to rotate
     // glm::mat4 rotate = glm::translate(glm::vec3(Aeroplane_x, Aeroplane_y, Aeroplane_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-Aeroplane_x, -Aeroplane_y, -Aeroplane_z));
     
     // Matrices.model *= translate*rotatey;
-    Matrices.model *= (translate * rotatey * rotatez);
+    Matrices.model *= (translate * rotatex * rotatey * rotatez);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object1);
@@ -197,14 +197,14 @@ void Aeroplane::forward(){
 }
 
 void Aeroplane::right(){
-    this->rot_z += 3.0;
+    this->rot_z += 2.0;
     if(this->rot_z > 18.0)
         this->rot_z = 18.0;
     this->rot_y += 0.8;
 }
 
 void Aeroplane::left(){
-    this->rot_z -= 3.0;
+    this->rot_z -= 2.0;
     if(this->rot_z < -18.0)
         this->rot_z = -18.0;
     this->rot_y -= 0.8;
@@ -213,4 +213,8 @@ void Aeroplane::left(){
 void Aeroplane::up(){
     if(this->speedy <= 0.06)
         this->speedy += 0.012;
+}
+
+void Aeroplane::rot_up(){
+    // this->rot_x += 2.0;
 }

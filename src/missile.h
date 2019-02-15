@@ -11,7 +11,7 @@ public:
     glm::vec3 position;
     void draw(glm::mat4 VP);
     void set_position(float x, float y, float z);
-    void tick();
+    int tick();
     float speedx, speedy, speedz, speed;
     float rot_x, rot_y, rot_z;
 private:

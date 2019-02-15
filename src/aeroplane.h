@@ -16,6 +16,7 @@ public:
     void right();
     void left();
     void up();
+    void rot_up();
     float speedx, speedy, speedz, speedxz;
     float rot_x, rot_y, rot_z;
 private:

@@ -30,6 +30,10 @@ CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.cpp
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.cpp
+CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.h
+CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
@@ -43,6 +47,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aim.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/altitude.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h

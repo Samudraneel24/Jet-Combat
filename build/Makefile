@@ -312,6 +312,33 @@ src/compass.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/compass.cpp.s
 .PHONY : src/compass.cpp.s
 
+src/detect_collision.o: src/detect_collision.cpp.o
+
+.PHONY : src/detect_collision.o
+
+# target to build an object file
+src/detect_collision.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o
+.PHONY : src/detect_collision.cpp.o
+
+src/detect_collision.i: src/detect_collision.cpp.i
+
+.PHONY : src/detect_collision.i
+
+# target to preprocess a source file
+src/detect_collision.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.i
+.PHONY : src/detect_collision.cpp.i
+
+src/detect_collision.s: src/detect_collision.cpp.s
+
+.PHONY : src/detect_collision.s
+
+# target to generate assembly for a file
+src/detect_collision.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.s
+.PHONY : src/detect_collision.cpp.s
+
 src/hill.o: src/hill.cpp.o
 
 .PHONY : src/hill.o
@@ -693,6 +720,9 @@ help:
 	@echo "... src/compass.o"
 	@echo "... src/compass.i"
 	@echo "... src/compass.s"
+	@echo "... src/detect_collision.o"
+	@echo "... src/detect_collision.i"
+	@echo "... src/detect_collision.s"
 	@echo "... src/hill.o"
 	@echo "... src/hill.i"
 	@echo "... src/hill.s"

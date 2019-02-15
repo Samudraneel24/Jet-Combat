@@ -11,6 +11,7 @@
 #include "compass.h"
 #include "parachute.h"
 #include "missile.h"
+#include "detect_collision.h"
 
 using namespace std;
 
@@ -141,6 +142,7 @@ void tick_input(GLFWwindow *window) {
     int up  = glfwGetKey(window, GLFW_KEY_UP);
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int down = glfwGetKey(window, GLFW_KEY_DOWN);
     int space  = glfwGetKey(window, GLFW_KEY_SPACE);
     int c = glfwGetKey(window, GLFW_KEY_C);
     int w = glfwGetKey(window, GLFW_KEY_W);
@@ -148,6 +150,9 @@ void tick_input(GLFWwindow *window) {
     int a = glfwGetKey(window, GLFW_KEY_A);
     int d = glfwGetKey(window, GLFW_KEY_D);
     int f = glfwGetKey(window, GLFW_KEY_F);
+    int k = glfwGetKey(window, GLFW_KEY_K);
+    int i = glfwGetKey(window, GLFW_KEY_I);
+
     if (c && counter > 15) {
         if(cam_option == 1)
             cam_option = 2;
@@ -161,32 +166,34 @@ void tick_input(GLFWwindow *window) {
             cam_option = 1;
         counter = 0;
     }
-    if(a)
+    if(left)
         cam_theta -= 0.2;
-    if(d)
+    if(right)
         cam_theta += 0.2;
-    if(w)
+    if(up)
         cam_phi -= 0.2;
-    if(s)
+    if(down)
         cam_phi += 0.2;
-    if(f && missile_interval > 20){
+    if(space && missile_interval > 15){
         missile_interval = 0;
         M.push_back(Missile(Plane.position.x, Plane.position.y, Plane.position.z, Plane.rot_y));
     }
-    if(up)
+    if(w)
+        Plane.rot_up();
+    if(i)
         Plane.forward();
-    if(right){
+    if(k)
+        Plane.up();
+    if(d){
         Plane.right();
         no_op = 0;
     }
-    else if(left){
+    else if(a){
         Plane.left();
         no_op = 0;
     }
     else
         no_op = 1;
-    if(space)
-        Plane.up();
 }
 
 void tick_elements() {
@@ -216,9 +223,38 @@ void tick_elements() {
         }
     }
 
-    for(int i=0; i<M.size(); i++)
-        M[i].tick();
-    // camera_rotation_angle += 1;
+    for(int i=0; i<M.size(); i++){
+        int destroy = M[i].tick();
+        if(destroy){
+            M.erase(M.begin() + i);
+            i--;
+        }
+        else{
+            bounding_box_t Missile_bound;
+            Missile_bound.x = M[i].position.x - 0.15;
+            Missile_bound.y = M[i].position.y - 0.15;
+            Missile_bound.z = M[i].position.z - 0.5;
+            Missile_bound.width = 0.3;
+            Missile_bound.height = 0.3;
+            Missile_bound.length = 1.3;
+            for(int j = 0; j<Par_arr.size(); j++){
+                bounding_box_t Para_bound;
+                Para_bound.x = Par_arr[j].position.x - 2.0;
+                Para_bound.y = Par_arr[j].position.y - 4.0;
+                Para_bound.z = Par_arr[j].position.z - 2.0;
+                Para_bound.width = 4.0;
+                Para_bound.height = 6.0;
+                Para_bound.length = 4.0;
+                if(detect_collision(Para_bound, Missile_bound)){
+                    cout<<1<<endl;
+                    M.erase(M.begin() + i);
+                    i--;
+                    Par_arr.erase(Par_arr.begin() + j);
+                    break;
+                }
+            }
+        }
+    }
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -311,10 +347,10 @@ int main(int argc, char **argv) {
     quit(window);
 }
 
-bool detect_collision(bounding_box_t a, bounding_box_t b) {
-    return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
-           (abs(a.y - b.y) * 2 < (a.height + b.height));
-}
+// bool detect_collision(bounding_box_t a, bounding_box_t b) {
+//     return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
+//            (abs(a.y - b.y) * 2 < (a.height + b.height));
+// }
 
 void reset_screen() {
     float top    = screen_center_y + 4 / screen_zoom;
