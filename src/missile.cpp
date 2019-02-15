@@ -1,18 +1,24 @@
-#include "aeroplane.h"
+#include "missile.h"
 #include "main.h"
 
 #define GLM_ENABLE_EXPERIMENTAL
 
-Aeroplane::Aeroplane(float x, float y, float z) {
+Missile::Missile(float x, float y, float z, float rot_y) {
     this->position = glm::vec3(x, y, z);
-    this->rot_x = this->rot_y = this->rot_z = 0;
-    this->speedx = this->speedy = this->speedz = this->speedxz = 0;
-    int n = 50;
+    int n = 25;
+
+    this->rot_y = rot_y;
+    this->rot_x = this->rot_z = 0;
+
+    this->speed = 2.5;
+    this->speedx = this->speed*(-sin(this->rot_y*(M_PI/180.0)));
+    this->speedz = this->speed*(cos(this->rot_y*(M_PI/180.0)));
+
     GLfloat face1[9*n], face2[9*n], body[18*n];
     float angle = ( 2.0*M_PI / float(n));
     float theta = 0.0;
-    float length = 3.0;
-    float radius1 = 0.5, radius2 = 0.5;
+    float length = 1.0;
+    float radius1 = 0.15, radius2 = 0.15;
     for(int i=0; i<n; i++){
         face1[9*i] = 0.0f;
         face1[9*i + 1] = 0.0f;
@@ -65,8 +71,8 @@ Aeroplane::Aeroplane(float x, float y, float z) {
     this->object3 = create3DObject(GL_TRIANGLES, 6*n, body, COLOR_REALBLACK, GL_FILL);
 
     theta = 0.0;
-    radius1 = 0.5, radius2 = 0.05;
-    length = 1.0;
+    radius1 = 0.15, radius2 = 0.0;
+    length = 0.3;
 
     for(int i=0; i<n; i++){
         face1[9*i] = 0.0f;
@@ -119,39 +125,16 @@ Aeroplane::Aeroplane(float x, float y, float z) {
     this->object5 = create3DObject(GL_TRIANGLES, 3*n, face2, COLOR_PINK, GL_FILL);
     this->object6 = create3DObject(GL_TRIANGLES, 6*n, body, COLOR_PINK, GL_FILL);
 
-    Point a, b, c;
-    a.x = 0.5, a.y = 0, a.z = 0.0;
-    b.x = 0.5, b.y = 0, b.z = 1.25;
-    c.x = 2.5, c.y = 0, c.z = -0.5;
-
-    GLfloat vertex_buffer_data[] = {
-        a.x, a.y, a.z,
-        b.x, b.y, b.z,
-        c.x, c.y, c.z,
-    };
-    this->lwing = create3DObject(GL_TRIANGLES, 3, vertex_buffer_data, COLOR_PINK, GL_FILL);
-
-    a.x = x - 0.5, a.y = 0, a.z = 0.0;
-    b.x = x - 0.5, b.y = 0, b.z = 1.25;
-    c.x = x - 2.5, c.y = 0, c.z = -0.5;
-
-    GLfloat vertex_buffer_data2[] = {
-        a.x, a.y, a.z,
-        b.x, b.y, b.z,
-        c.x, c.y, c.z
-    };
-    this->rwing = create3DObject(GL_TRIANGLES, 3, vertex_buffer_data2, COLOR_PINK, GL_FILL);
-
 }
 
-void Aeroplane::draw(glm::mat4 VP) {
+void Missile::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
     // glm::mat4 rotatex    = glm::rotate((float) (this->rot_x * M_PI / 180.0f), glm::vec3(1, 0, 0));
     glm::mat4 rotatey    = glm::rotate((float) (-this->rot_y * M_PI / 180.0f), glm::vec3(0, 1, 0));
     glm::mat4 rotatez    = glm::rotate((float) (this->rot_z * M_PI / 180.0f), glm::vec3(0, 0, 1));
     // No need as coords centePINK at 0, 0, 0 of cube arouund which we waant to rotate
-    // glm::mat4 rotate = glm::translate(glm::vec3(Aeroplane_x, Aeroplane_y, Aeroplane_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-Aeroplane_x, -Aeroplane_y, -Aeroplane_z));
+    // glm::mat4 rotate = glm::translate(glm::vec3(Missile_x, Missile_y, Missile_z)) * rotatey * rotatex * rotatez * glm::translate(glm::vec3(-Missile_x, -Missile_y, -Missile_z));
     
     // Matrices.model *= translate*rotatey;
     Matrices.model *= (translate * rotatey * rotatez);
@@ -163,54 +146,17 @@ void Aeroplane::draw(glm::mat4 VP) {
     draw3DObject(this->object4);
     draw3DObject(this->object5);
     draw3DObject(this->object6);
-    draw3DObject(this->lwing);
-    draw3DObject(this->rwing);
 }
 
-void Aeroplane::set_position(float x, float y, float z) {
+void Missile::set_position(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
 }
 
-void Aeroplane::tick(int no_op) {
-    this->speedxz -= 0.01;
-    if(this->speedxz < 0.0)
-        this->speedxz = 0.0;
-    this->speedy -= 0.004;
-    if(no_op == 1){
-        if(this->rot_z < 0.0)
-            this->rot_z += 2.0;
-        else if(this->rot_z > 0)
-            this->rot_z -= 2.0;
-    }
-    this->position.x += this->speedxz*(-sin(this->rot_y*(M_PI/180.0)));
-    this->position.y += this->speedy;
-    this->position.z += this->speedxz*cos(this->rot_y*(M_PI/180.0));
+void Missile::tick() {
+    this->position.x += this->speedx;
+    this->position.z += this->speedz;
     if(this->position.y < 0.0){
         this->position.y = 0.0;
         this->speedy = 0;
     }
-}
-
-void Aeroplane::forward(){
-    if(this->speedxz <= 0.27)
-        this->speedxz += 0.03;
-}
-
-void Aeroplane::right(){
-    this->rot_z += 3.0;
-    if(this->rot_z > 18.0)
-        this->rot_z = 18.0;
-    this->rot_y += 0.8;
-}
-
-void Aeroplane::left(){
-    this->rot_z -= 3.0;
-    if(this->rot_z < -18.0)
-        this->rot_z = -18.0;
-    this->rot_y -= 0.8;
-}
-
-void Aeroplane::up(){
-    if(this->speedy <= 0.06)
-        this->speedy += 0.012;
 }

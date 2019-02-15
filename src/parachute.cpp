@@ -7,7 +7,8 @@ Parachute::Parachute(float x, float y, float z) {
     this->position = glm::vec3(x, y, z);
     this->rot_y = this->rot_z = 0;
     this->rot_x = 90;
-    this->speedx = this->speedy = this->speedz = 0;
+    this->speedx = this->speedz = 0;
+    this->speedy = -0.15;
     int n = 50;
     GLfloat top_data[9*n], string_data[9*n], color_data[9*n];
     float angle = ( 2.0*M_PI / float(n));
@@ -131,7 +132,6 @@ void Parachute::set_position(float x, float y, float z) {
 }
 
 int Parachute::tick() {
-    this->speedy -= 0.0025;
     this->position.y += this->speedy;
     if(this->position.y < 0)
         return 1;
