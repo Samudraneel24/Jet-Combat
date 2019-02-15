@@ -135,6 +135,8 @@ aim.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/aim.h
 compass.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/compass.h
+parachute.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 iostream
@@ -201,6 +203,16 @@ glm/gtx/transform.hpp
 -
 glm/gtc/matrix_transform.hpp
 -
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.cpp
+parachute.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.h
 main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 

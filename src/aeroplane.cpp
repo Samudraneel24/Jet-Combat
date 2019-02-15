@@ -200,14 +200,14 @@ void Aeroplane::right(){
     this->rot_z += 3.0;
     if(this->rot_z > 18.0)
         this->rot_z = 18.0;
-    this->rot_y += 1.5;
+    this->rot_y += 0.8;
 }
 
 void Aeroplane::left(){
     this->rot_z -= 3.0;
     if(this->rot_z < -18.0)
         this->rot_z = -18.0;
-    this->rot_y -= 1.5;
+    this->rot_y -= 0.8;
 }
 
 void Aeroplane::up(){

@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/main.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/nonedit.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/other_handlers.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o"
+  "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o"
   "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.cpp" "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles/graphics_asgn2.dir/src/score.cpp.o"

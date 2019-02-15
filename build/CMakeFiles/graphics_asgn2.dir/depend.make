@@ -46,6 +46,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle2d.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/score.h
@@ -57,6 +58,10 @@ CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
 
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
+
+CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o: ../src/parachute.cpp
+CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o: ../src/parachute.h
 
 CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/rectangle.cpp

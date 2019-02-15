@@ -9,6 +9,7 @@
 #include "altitude.h"
 #include "aim.h"
 #include "compass.h"
+#include "parachute.h"
 
 using namespace std;
 
@@ -29,10 +30,12 @@ Score Sc;
 Altitude Alt;
 Aim A;
 Compass C;
+std::vector<Parachute> Par_arr;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 int counter = 0;
+int tick_counter = 0;
 
 int cam_option = 1;
 int no_op = 1;
@@ -125,6 +128,8 @@ void draw() {
     Sc.draw(d_VP, score);
     Alt.draw(d_VP, (int)(Plane.position.y * 10));
     C.draw(d_VP);
+    for(int i = 0; i<Par_arr.size(); i++)
+        Par_arr[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -175,7 +180,7 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
-    // cout<<Plane.rot_y<<endl;
+    tick_counter++;
     Plane.tick(no_op);
     Sea.tick();
     for(int i = 0; i<HillArr.size(); i++)
@@ -184,6 +189,22 @@ void tick_elements() {
     Alt.tick();
     A.tick(Plane.position.x - 10*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z + 10*cos(Plane.rot_y*(M_PI/180.0)), Plane.rot_y);
     C.tick(Plane.rot_y);
+
+    // Parachute
+    if(counter % 25 == 0){
+        float x = Plane.position.x - 100 + rand()%200;
+        float y = 40.0;
+        float z = Plane.position.z - 100 + rand()%200;
+        Par_arr.push_back(Parachute(x, y, z));
+    }
+    for(int i = 0; i<Par_arr.size(); i++){
+        int destroy = Par_arr[i].tick();
+        if(destroy == 1){
+            Par_arr.erase(Par_arr.begin() + i);
+            i--;
+        }
+    }
+
     // camera_rotation_angle += 1;
 }
 
