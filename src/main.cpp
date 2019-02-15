@@ -12,6 +12,7 @@
 #include "parachute.h"
 #include "missile.h"
 #include "detect_collision.h"
+#include "bomb.h"
 
 using namespace std;
 
@@ -34,12 +35,13 @@ Aim A;
 Compass C;
 std::vector<Parachute> Par_arr;
 std::vector<Missile> M;
+std::vector<Bomb> B;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 int counter = 0;
 int tick_counter = 0;
-int missile_interval = 0;
+int missile_interval = 0, bomb_interval = 0;
 
 int cam_option = 1;
 int no_op = 1;
@@ -136,6 +138,8 @@ void draw() {
         Par_arr[i].draw(VP);
     for(int i=0; i<M.size(); i++)
         M[i].draw(VP);
+    for(int i=0; i<B.size(); i++)
+        B[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -152,6 +156,7 @@ void tick_input(GLFWwindow *window) {
     int f = glfwGetKey(window, GLFW_KEY_F);
     int k = glfwGetKey(window, GLFW_KEY_K);
     int i = glfwGetKey(window, GLFW_KEY_I);
+    int b = glfwGetKey(window, GLFW_KEY_B);
 
     if (c && counter > 15) {
         if(cam_option == 1)
@@ -178,6 +183,10 @@ void tick_input(GLFWwindow *window) {
         missile_interval = 0;
         M.push_back(Missile(Plane.position.x, Plane.position.y, Plane.position.z, Plane.rot_y));
     }
+    if(b && bomb_interval > 25){
+        bomb_interval = 0;
+        B.push_back(Bomb(Plane.position.x, Plane.position.y, Plane.position.z, Plane.speedxz, Plane.speedy, Plane.rot_y));
+    }
     if(w)
         Plane.rot_up();
     if(i)
@@ -197,7 +206,7 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
-    missile_interval++;
+    missile_interval++, bomb_interval++;
     tick_counter++;
     Plane.tick(no_op);
     Sea.tick();
@@ -246,8 +255,39 @@ void tick_elements() {
                 Para_bound.height = 6.0;
                 Para_bound.length = 4.0;
                 if(detect_collision(Para_bound, Missile_bound)){
-                    cout<<1<<endl;
                     M.erase(M.begin() + i);
+                    i--;
+                    Par_arr.erase(Par_arr.begin() + j);
+                    break;
+                }
+            }
+        }
+    }
+
+    for(int i=0; i<B.size(); i++){
+        int destroy = B[i].tick();
+        if(destroy){
+            B.erase(B.begin() + i);
+            i--;
+        }
+        else{
+            bounding_box_t Bomb_bound;
+            Bomb_bound.x = B[i].position.x - 0.15;
+            Bomb_bound.y = B[i].position.y - 0.15;
+            Bomb_bound.z = B[i].position.z - 0.5;
+            Bomb_bound.width = 0.3;
+            Bomb_bound.height = 0.3;
+            Bomb_bound.length = 1.3;
+            for(int j = 0; j<Par_arr.size(); j++){
+                bounding_box_t Para_bound;
+                Para_bound.x = Par_arr[j].position.x - 2.0;
+                Para_bound.y = Par_arr[j].position.y - 4.0;
+                Para_bound.z = Par_arr[j].position.z - 2.0;
+                Para_bound.width = 4.0;
+                Para_bound.height = 6.0;
+                Para_bound.length = 4.0;
+                if(detect_collision(Para_bound, Bomb_bound)){
+                    B.erase(B.begin() + i);
                     i--;
                     Par_arr.erase(Par_arr.begin() + j);
                     break;

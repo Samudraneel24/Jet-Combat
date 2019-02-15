@@ -159,7 +159,7 @@ int Missile::tick() {
         this->position.y = 0.0;
         this->speedy = 0;
     }
-    if(this->position.x > 500 || this->position.x < -500 || this->position.z > 500 || this->position.z < -500)
+    if(this->position.y < 0 || this->position.y > 500 || this->position.x > 500 || this->position.x < -500 || this->position.z > 500 || this->position.z < -500)
         return 1;
     return 0;
 }

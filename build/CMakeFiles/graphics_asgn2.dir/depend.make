@@ -23,6 +23,10 @@ CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o: ../src/bomb.cpp
+CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o: ../src/bomb.h
+CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/main.h
 
@@ -46,6 +50,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aim.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/altitude.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h

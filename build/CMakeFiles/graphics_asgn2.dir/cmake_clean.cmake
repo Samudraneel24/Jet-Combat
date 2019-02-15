@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o"
