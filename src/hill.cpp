@@ -3,8 +3,9 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 
-Hill::Hill(float x, float z){
+Hill::Hill(float x, float z, char type){
     this->position = glm::vec3(x, 0, z);
+    this->type = type;
     this->rot_x = -90;
     this->rot_y = this->rot_z = 0;
     this->BaseRadius = 15 + rand()%10;
@@ -20,7 +21,11 @@ Hill::Hill(float x, float z){
     float angle = ( 2.0*M_PI / float(n));
     float theta = 0.0;
     float r, g, b, HI, LO;
+    if(type == 'v')
+        this->TopRadius = max(1, this->TopRadius);
+    radius2 = this->TopRadius;
     for(int i=0; i<n; i++){
+
         face1[9*i] = 0.0f;
         face1[9*i + 1] = 0.0f;
         face1[9*i + 2] = 0.0f - length/2;
@@ -67,22 +72,40 @@ Hill::Hill(float x, float z){
 
 
         for(int j = 0; j<3; j++){
-            HI = 0.3, LO = 0.0;
-            r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
-            b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
-            LO = 0.7, HI = 1.0;
-            g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            if(type == 'h'){
+                HI = 0.3, LO = 0.0;
+                r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                LO = 0.7, HI = 1.0;
+                g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            }
+            else{
+                HI = 0.5, LO = 0.25;
+                r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                HI = 0.3, LO = 0.1;
+                g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            }
             face1_color[9*i + 3*j] = r;
             face1_color[9*i + 3*j + 1] = g; 
             face1_color[9*i + 3*j + 2] = b; 
         }
 
         for(int j = 0; j<3; j++){
-            HI = 0.4, LO = 0.0;
-            r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
-            b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
-            LO = 0.7, HI = 1.0;
-            g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            if(type == 'h'){
+                HI = 0.4, LO = 0.0;
+                r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                LO = 0.7, HI = 1.0;
+                g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            }
+            else{
+                HI = 0.5, LO = 0.25;
+                r = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                HI = 0.3, LO = 0.1;
+                g = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+                b = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+            }
             face2_color[9*i + 3*j] = r;
             face2_color[9*i + 3*j + 1] = g; 
             face2_color[9*i + 3*j + 2] = b; 
@@ -111,7 +134,10 @@ Hill::Hill(float x, float z){
     }
 
     this->face1 = create3DObject(GL_TRIANGLES, 3*n, face1, face1_color, GL_FILL);
-    this->face2 = create3DObject(GL_TRIANGLES, 3*n, face2, face2_color, GL_FILL);
+    if(type == 'h')
+        this->face2 = create3DObject(GL_TRIANGLES, 3*n, face2, face2_color, GL_FILL);
+    else
+        this->face2 = create3DObject(GL_TRIANGLES, 3*n, face2, COLOR_FIRE, GL_FILL);
     this->body = create3DObject(GL_TRIANGLES, 6*n, body, body_color, GL_FILL);
 
     // this->Base = ThreeD(50, x, 0, z, this->BaseRadius, this->BaseRadius, 0.2, 90, 0, 0, COLOR_GREEN, COLOR_GREEN, COLOR_GREEN);

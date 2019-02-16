@@ -5,8 +5,8 @@
 #include "main.h"
 using namespace std;
 
-Triangle::Triangle(Point a, Point b, Point c,color_t color) {
-    this->position = glm::vec3(0, 0, 0);
+Triangle::Triangle(Point origin, Point a, Point b, Point c,color_t color) {
+    this->position = glm::vec3(origin.x, origin.y, origin.z);
     this->rot_z = this->rot_x = this->rot_y = 0;
     GLfloat vertex_buffer_data[] = {
         a.x, a.y, a.z,

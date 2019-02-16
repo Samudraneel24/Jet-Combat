@@ -61,8 +61,11 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle2d.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/score.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/semicircle2d.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/sevenseg.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/speedometer.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/timer.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/triangle.h
 
 CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o: ../src/missile.cpp
@@ -92,10 +95,22 @@ CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/score.cpp
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/score.h
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/sevenseg.h
 
+CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o: ../src/semicircle2d.cpp
+CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o: ../src/semicircle2d.h
+
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: ../src/rectangle2d.h
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: ../src/sevenseg.cpp
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: ../src/sevenseg.h
+
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/rectangle2d.h
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/semicircle2d.h
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/sevenseg.h
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/speedometer.cpp
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/speedometer.h
+CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/triangle.h
 
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.h

@@ -7,7 +7,7 @@ Bomb::Bomb(float x, float y, float z, float speed, float speedy, float rot_y) {
     this->position = glm::vec3(x, y, z);
     int n = 25;
 
-    this->rot_y = rot_y + 80;
+    this->rot_y = rot_y + 90;
     this->rot_x = this->rot_z = 0;
 
     this->speedx = speed*(-sin(this->rot_y*(M_PI/180.0)));
@@ -15,7 +15,7 @@ Bomb::Bomb(float x, float y, float z, float speed, float speedy, float rot_y) {
     this->speedy = speedy;
 
 
-    GLfloat face1[9*n], face2[9*n], body[18*n];
+    GLfloat face1[9*n], face2[9*n], body[18*n], body_color[18*n];
     float angle = ( 2.0*M_PI / float(n));
     float theta = 0.0;
     float length = 1.0;
@@ -69,7 +69,7 @@ Bomb::Bomb(float x, float y, float z, float speed, float speedy, float rot_y) {
 
     this->object1 = create3DObject(GL_TRIANGLES, 3*n, face1, COLOR_YELLOW, GL_FILL);
     this->object2 = create3DObject(GL_TRIANGLES, 3*n, face2, COLOR_YELLOW, GL_FILL);
-    this->object3 = create3DObject(GL_TRIANGLES, 6*n, body, COLOR_REALRED, GL_FILL);
+    this->object3 = create3DObject(GL_TRIANGLES, 6*n, body, COLOR_PINK, GL_FILL);
 
 }
 

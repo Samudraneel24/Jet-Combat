@@ -9,13 +9,13 @@ SevenSeg::SevenSeg(float x, float y) {
     this->on = "1111111";
     this->x = this->orgx = x;
     this->y = this->orgy = y;
-    this->R[0] = Rectangle2d(x, y, 0.2, 0.03, -90.0, COLOR_REALBLACK);
-    this->R[1] = Rectangle2d(x, y - 0.2, 0.2, 0.03, -90.0, COLOR_REALBLACK);
-    this->R[2] = Rectangle2d(x, y - 0.4, 0.2, 0.03, 0.0, COLOR_REALBLACK);
-    this->R[3] = Rectangle2d(x + 0.2 - 0.03, y - 0.2, 0.2, 0.03, -90.0, COLOR_REALBLACK);
-    this->R[4] = Rectangle2d(x + 0.2 - 0.03, y, 0.2, 0.03, -90.0, COLOR_REALBLACK);
-    this->R[5] = Rectangle2d(x, y, 0.2, 0.03, 0.0, COLOR_REALBLACK);
-    this->R[6] = Rectangle2d(x, y - 0.2, 0.2, 0.03, 0.0, COLOR_REALBLACK);
+    this->R[0] = Rectangle2d(x, y, 0.15, 0.02, -90.0, COLOR_REALBLACK);
+    this->R[1] = Rectangle2d(x, y - 0.15, 0.15, 0.02, -90.0, COLOR_REALBLACK);
+    this->R[2] = Rectangle2d(x, y - 0.3, 0.15, 0.02, 0.0, COLOR_REALBLACK);
+    this->R[3] = Rectangle2d(x + 0.15 - 0.02, y - 0.15, 0.15, 0.02, -90.0, COLOR_REALBLACK);
+    this->R[4] = Rectangle2d(x + 0.15 - 0.02, y, 0.15, 0.02, -90.0, COLOR_REALBLACK);
+    this->R[5] = Rectangle2d(x, y, 0.15, 0.02, 0.0, COLOR_REALBLACK);
+    this->R[6] = Rectangle2d(x, y - 0.15, 0.15, 0.02, 0.0, COLOR_REALBLACK);
 }
 
 void SevenSeg::draw(glm::mat4 VP, char c) {
@@ -56,6 +56,10 @@ void SevenSeg::draw(glm::mat4 VP, char c) {
         this->on = "1101111";
     else if(c == 't')
         this->on = "1110001";
+    else if(c == 'p')
+        this->on = "1100111";
+    else if(c == 'd')
+        this->on = "0111101";
     for(int i=0; i<7; i++)
         if(this->on[i] == '1')
             this->R[i].draw(VP);

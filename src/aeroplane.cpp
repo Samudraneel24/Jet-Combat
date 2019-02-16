@@ -175,6 +175,8 @@ void Aeroplane::tick(int no_op) {
     this->speedxz -= 0.01;
     if(this->speedxz < 0.0)
         this->speedxz = 0.0;
+    if(this->speedxz > 0.3)
+        this->speedxz = 0.3;
     this->speedy -= 0.004;
     if(no_op == 1){
         if(this->rot_z < 0.0)
@@ -189,11 +191,14 @@ void Aeroplane::tick(int no_op) {
         this->position.y = 0.0;
         this->speedy = 0;
     }
+    if(this->position.y > 50){
+        this->position.y = 50;
+        this->speedy = 0;
+    }
 }
 
 void Aeroplane::forward(){
-    if(this->speedxz <= 0.27)
-        this->speedxz += 0.03;
+    this->speedxz += 0.03;
 }
 
 void Aeroplane::right(){

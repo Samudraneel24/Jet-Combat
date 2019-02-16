@@ -13,6 +13,7 @@
 #include "missile.h"
 #include "detect_collision.h"
 #include "bomb.h"
+#include "speedometer.h"
 
 using namespace std;
 
@@ -33,6 +34,7 @@ Score Sc;
 Altitude Alt;
 Aim A;
 Compass C;
+Speedometer Spd;
 std::vector<Parachute> Par_arr;
 std::vector<Missile> M;
 std::vector<Bomb> B;
@@ -132,7 +134,7 @@ void draw() {
     for(int i = 0; i<HillArr.size(); i++)
         HillArr[i].draw(VP);
     Sc.draw(d_VP, score);
-    Alt.draw(d_VP, (int)(Plane.position.y * 10));
+    Alt.draw(d_VP);
     C.draw(d_VP);
     for(int i = 0; i<Par_arr.size(); i++)
         Par_arr[i].draw(VP);
@@ -140,6 +142,7 @@ void draw() {
         M[i].draw(VP);
     for(int i=0; i<B.size(); i++)
         B[i].draw(VP);
+    Spd.draw(d_VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -206,6 +209,15 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
+
+    bounding_box_t Plane_bound;
+    Plane_bound.x = Plane.position.x + 1.5*sin(Plane.rot_y*(M_PI/180.0));
+    Plane_bound.y = Plane.position.y - 0.5;
+    Plane_bound.z = Plane.position.z - 1.5*cos(Plane.rot_y*(M_PI/180.0));
+    Plane_bound.height = 1;
+    Plane_bound.width = 4*sin(Plane.rot_y*(M_PI/180.0));
+    Plane_bound.length = 4*cos(Plane.rot_y*(M_PI/180.0));
+
     missile_interval++, bomb_interval++;
     tick_counter++;
     Plane.tick(no_op);
@@ -213,9 +225,10 @@ void tick_elements() {
     for(int i = 0; i<HillArr.size(); i++)
         HillArr[i].tick();
     Sc.tick();
-    Alt.tick();
+    Alt.tick(Plane.position.y * 10);
     A.tick(Plane.position.x - 10*sin(Plane.rot_y*(M_PI/180.0)), Plane.position.y, Plane.position.z + 10*cos(Plane.rot_y*(M_PI/180.0)), Plane.rot_y);
     C.tick(Plane.rot_y);
+    Spd.tick(Plane.speedxz);
 
     // Parachute
     if(counter % 25 == 0){
@@ -258,6 +271,7 @@ void tick_elements() {
                     M.erase(M.begin() + i);
                     i--;
                     Par_arr.erase(Par_arr.begin() + j);
+                    score += 25;
                     break;
                 }
             }
@@ -290,11 +304,26 @@ void tick_elements() {
                     B.erase(B.begin() + i);
                     i--;
                     Par_arr.erase(Par_arr.begin() + j);
+                    score += 25;
                     break;
                 }
             }
         }
     }
+
+    for(int i = 0; i < HillArr.size(); i++)
+        if(HillArr[i].type == 'v'){
+            bounding_box_t Volcano_bound;
+            Volcano_bound.x = HillArr[i].position.x - HillArr[i].BaseRadius;
+            Volcano_bound.y = 0;
+            Volcano_bound.z = HillArr[i].position.z - HillArr[i].BaseRadius;
+            Volcano_bound.height = 1100;
+            Volcano_bound.width = 2*HillArr[i].BaseRadius;
+            Volcano_bound.length = 2*HillArr[i].BaseRadius;
+            if(detect_collision(Volcano_bound, Plane_bound))
+                cout<<i<<endl;
+        }
+    
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -324,14 +353,19 @@ void initGL(GLFWwindow *window, int width, int height) {
             int up = bottom + 100;
             int x = left + 25 + rand()%50;
             int z = bottom + 25 + rand()%50;
-            HillArr.push_back(Hill(x, z));
+            int type = rand()%10;
+            if(type < 3)
+                 HillArr.push_back(Hill(x, z, 'v'));
+            else
+                 HillArr.push_back(Hill(x, z, 'h'));
         }
     }
 
     Sc = Score(-3.8, -3.5);
-    Alt = Altitude(-3.8, -2.8);
+    Alt = Altitude(-3.8, -1.0);
     A = Aim(6);
     C = Compass(-3.0, 3.0);
+    Spd = Speedometer(2.2, -3.5);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");

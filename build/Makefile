@@ -636,6 +636,33 @@ src/score.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/score.cpp.s
 .PHONY : src/score.cpp.s
 
+src/semicircle2d.o: src/semicircle2d.cpp.o
+
+.PHONY : src/semicircle2d.o
+
+# target to build an object file
+src/semicircle2d.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o
+.PHONY : src/semicircle2d.cpp.o
+
+src/semicircle2d.i: src/semicircle2d.cpp.i
+
+.PHONY : src/semicircle2d.i
+
+# target to preprocess a source file
+src/semicircle2d.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.i
+.PHONY : src/semicircle2d.cpp.i
+
+src/semicircle2d.s: src/semicircle2d.cpp.s
+
+.PHONY : src/semicircle2d.s
+
+# target to generate assembly for a file
+src/semicircle2d.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.s
+.PHONY : src/semicircle2d.cpp.s
+
 src/sevenseg.o: src/sevenseg.cpp.o
 
 .PHONY : src/sevenseg.o
@@ -662,6 +689,33 @@ src/sevenseg.s: src/sevenseg.cpp.s
 src/sevenseg.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.s
 .PHONY : src/sevenseg.cpp.s
+
+src/speedometer.o: src/speedometer.cpp.o
+
+.PHONY : src/speedometer.o
+
+# target to build an object file
+src/speedometer.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o
+.PHONY : src/speedometer.cpp.o
+
+src/speedometer.i: src/speedometer.cpp.i
+
+.PHONY : src/speedometer.i
+
+# target to preprocess a source file
+src/speedometer.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.i
+.PHONY : src/speedometer.cpp.i
+
+src/speedometer.s: src/speedometer.cpp.s
+
+.PHONY : src/speedometer.s
+
+# target to generate assembly for a file
+src/speedometer.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.s
+.PHONY : src/speedometer.cpp.s
 
 src/timer.o: src/timer.cpp.o
 
@@ -783,9 +837,15 @@ help:
 	@echo "... src/score.o"
 	@echo "... src/score.i"
 	@echo "... src/score.s"
+	@echo "... src/semicircle2d.o"
+	@echo "... src/semicircle2d.i"
+	@echo "... src/semicircle2d.s"
 	@echo "... src/sevenseg.o"
 	@echo "... src/sevenseg.i"
 	@echo "... src/sevenseg.s"
+	@echo "... src/speedometer.o"
+	@echo "... src/speedometer.i"
+	@echo "... src/speedometer.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"

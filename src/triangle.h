@@ -7,7 +7,7 @@
 class Triangle {
 public:
     Triangle() {}
-    Triangle(Point a, Point b, Point c, color_t color);
+    Triangle(Point origin, Point a, Point b, Point c, color_t color);
     glm::vec3 position;
     void draw(glm::mat4 VP, float x, float y, float z);
     void set_position(float x, float y, float z);
