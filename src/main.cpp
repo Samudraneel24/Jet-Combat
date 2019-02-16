@@ -14,6 +14,7 @@
 #include "detect_collision.h"
 #include "bomb.h"
 #include "speedometer.h"
+#include "fuel.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ Speedometer Spd;
 std::vector<Parachute> Par_arr;
 std::vector<Missile> M;
 std::vector<Bomb> B;
+std::vector<Fuel> F;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -143,6 +145,8 @@ void draw() {
     for(int i=0; i<B.size(); i++)
         B[i].draw(VP);
     Spd.draw(d_VP);
+    for(int i = 0; i < F.size(); i++)
+        F[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -323,6 +327,9 @@ void tick_elements() {
             if(detect_collision(Volcano_bound, Plane_bound))
                 cout<<i<<endl;
         }
+
+    for(int i = 0; i < F.size(); i++)
+        F[i].tick();
     
 }
 
@@ -358,6 +365,11 @@ void initGL(GLFWwindow *window, int width, int height) {
                  HillArr.push_back(Hill(x, z, 'v'));
             else
                  HillArr.push_back(Hill(x, z, 'h'));
+
+            x = left + 25 + rand()%50;
+            z = bottom + 25 + rand()%50;
+            int y = 10 + rand()%35;
+            F.push_back(Fuel(x, y, z));
         }
     }
 

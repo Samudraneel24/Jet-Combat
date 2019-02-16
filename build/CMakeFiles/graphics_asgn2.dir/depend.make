@@ -38,6 +38,11 @@ CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collisio
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/ThreeD.h
+CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.cpp
+CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.h
+CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
@@ -53,6 +58,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h

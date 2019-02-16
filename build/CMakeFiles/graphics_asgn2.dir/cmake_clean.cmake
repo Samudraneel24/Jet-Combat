@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/input.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/main.cpp.o"

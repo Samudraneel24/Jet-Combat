@@ -366,6 +366,33 @@ src/detect_collision.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.s
 .PHONY : src/detect_collision.cpp.s
 
+src/fuel.o: src/fuel.cpp.o
+
+.PHONY : src/fuel.o
+
+# target to build an object file
+src/fuel.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o
+.PHONY : src/fuel.cpp.o
+
+src/fuel.i: src/fuel.cpp.i
+
+.PHONY : src/fuel.i
+
+# target to preprocess a source file
+src/fuel.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.i
+.PHONY : src/fuel.cpp.i
+
+src/fuel.s: src/fuel.cpp.s
+
+.PHONY : src/fuel.s
+
+# target to generate assembly for a file
+src/fuel.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.s
+.PHONY : src/fuel.cpp.s
+
 src/hill.o: src/hill.cpp.o
 
 .PHONY : src/hill.o
@@ -807,6 +834,9 @@ help:
 	@echo "... src/detect_collision.o"
 	@echo "... src/detect_collision.i"
 	@echo "... src/detect_collision.s"
+	@echo "... src/fuel.o"
+	@echo "... src/fuel.i"
+	@echo "... src/fuel.s"
 	@echo "... src/hill.o"
 	@echo "... src/hill.i"
 	@echo "... src/hill.s"
