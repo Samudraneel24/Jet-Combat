@@ -41,13 +41,13 @@ void Arrow::tick(Point Checkpoint, Point Plane, float rot_y) {
     float del_x = (Checkpoint.x - Plane.x);
     float del_z = (Checkpoint.z - Plane.z);
     float l = sqrt( del_x*del_x + del_z*del_z);
-    if(l > 100){
+    if(l > 180){
       this->position.x = Plane.x + (del_x*50.0)/l;
       this->position.z = Plane.z + (del_z*50.0)/l;
     }
     else{
       this->position.x = Checkpoint.x;
-      this->position.y = Checkpoint.y + 5;
+      this->position.y = Checkpoint.y + 8;
       this->position.z = Checkpoint.z;
     }
     this->rot_y = -rot_y;

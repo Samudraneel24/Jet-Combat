@@ -54,7 +54,8 @@ int counter = 0;
 int tick_counter = 0;
 int missile_interval = 0, bomb_interval = 0;
 float fuel_count = 500.0;
-int Cur_checkpoint = 1;
+int Cur_checkpoint = 0;
+int gamewon = 0;
 
 int cam_option = 1;
 int no_op = 1;
@@ -157,8 +158,8 @@ void draw() {
     for(int i = 0; i < F.size(); i++)
         F[i].draw(VP);
     F_meter.draw(d_VP);
-    for(int i = 0; i < Enemy_arr.size(); i++)
-        Enemy_arr[i].draw(VP);
+    // for(int i = 0; i < Enemy_arr.size(); i++)
+    Enemy_arr[Cur_checkpoint].draw(VP);
     arrow.draw(VP);
 }
 
@@ -251,7 +252,7 @@ void tick_elements() {
     // Parachute
     if(counter % 25 == 0){
         float x = Plane.position.x - 100 + rand()%200;
-        float y = Plane.position.y + 50;
+        float y = Plane.position.y + 20;
         float z = Plane.position.z - 100 + rand()%200;
         Par_arr.push_back(Parachute(x, y, z));
     }
@@ -293,6 +294,16 @@ void tick_elements() {
                     break;
                 }
             }
+
+            bounding_box_t Enemy_bound;
+            Enemy_bound.x = Enemy_arr[Cur_checkpoint].position.x - 4.0;
+            Enemy_bound.width = 8.0;
+            Enemy_bound.y = Enemy_arr[Cur_checkpoint].position.y - 1.0;
+            Enemy_bound.height = 3.5;
+            Enemy_bound.z = Enemy_arr[Cur_checkpoint].position.z - 4.0;
+            Enemy_bound.length = 8.0;
+            if(detect_collision(Enemy_bound, Missile_bound))
+                Enemy_arr[Cur_checkpoint].life--;
         }
     }
 
@@ -360,8 +371,13 @@ void tick_elements() {
     fuel_count -= Plane.speed;
     F_meter.tick(fuel_count);
 
-    for(int i = 0; i < Enemy_arr.size(); i++)
-        Enemy_arr[i].tick();
+    Enemy_arr[Cur_checkpoint].tick();
+    if(Enemy_arr[Cur_checkpoint].life <= 0){
+        Cur_checkpoint++;
+        if(Cur_checkpoint == 3){
+            gamewon = 1;
+        }
+    }
 
     Point Checkpoint, plane;
     Checkpoint.x = Enemy_arr[Cur_checkpoint].position.x;
@@ -468,7 +484,7 @@ int main(int argc, char **argv) {
     initGL (window, width, height);
 
     /* Draw in loop */
-    while (!glfwWindowShouldClose(window)) {
+    while (gamewon == 0 && !glfwWindowShouldClose(window)) {
         // Process timers
 
         if (t60.processTick()) {

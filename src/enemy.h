@@ -16,6 +16,7 @@ public:
     float rot_x, rot_y, rot_z;
     float Radiustop, Radiusbase, length;
     ThreeD Body, Cannon;
+    int life;
 private:
     VAO* object;
 };

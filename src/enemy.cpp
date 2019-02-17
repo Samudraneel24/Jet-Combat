@@ -9,7 +9,8 @@ Enemy::Enemy(float x, float y, float z){
     this->Radiustop = 3.0;
     this->length = 2.0;
     this->Body = ThreeD(25, x, y, z, 4.0, 3.0, 2.0, 0, 0, 0, COLOR_YELLOW, COLOR_YELLOW, COLOR_YELLOW);
-    this->Cannon = ThreeD(25, x, y + 2.0, z, 2.0, 1.5, 1.5, 0, 0, 0, COLOR_REALBLACK, COLOR_REALBLACK, COLOR_REALBLACK);
+    this->Cannon = ThreeD(25, x, y + 1.75, z, 2.0, 1.5, 1.5, 0, 0, 0, COLOR_REALBLACK, COLOR_REALBLACK, COLOR_REALBLACK);
+    this->life = 5;
 }
 
 void Enemy::draw(glm::mat4 VP) {
