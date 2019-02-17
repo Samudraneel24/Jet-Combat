@@ -58,6 +58,20 @@ sevenseg.h
 rectangle2d.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.h
 
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.cpp
+iostream
+-
+fstream
+-
+arrow.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.cpp
 ball.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.h
@@ -101,6 +115,18 @@ detect_collision.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/detect_collision.h
 main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.cpp
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+enemy.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+ThreeD.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ThreeD.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/fuel.cpp
 main.h
@@ -205,6 +231,10 @@ fuel.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/fuel.h
 fuelmeter.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/fuelmeter.h
+enemy.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.h
+arrow.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 iostream

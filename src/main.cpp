@@ -16,6 +16,8 @@
 #include "speedometer.h"
 #include "fuel.h"
 #include "fuelmeter.h"
+#include "enemy.h"
+#include "arrow.h"
 
 using namespace std;
 
@@ -42,6 +44,9 @@ std::vector<Parachute> Par_arr;
 std::vector<Missile> M;
 std::vector<Bomb> B;
 std::vector<Fuel> F;
+std::vector<int> Possible_base;
+std::vector<Enemy> Enemy_arr;
+Arrow arrow;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -49,6 +54,7 @@ int counter = 0;
 int tick_counter = 0;
 int missile_interval = 0, bomb_interval = 0;
 float fuel_count = 500.0;
+int Cur_checkpoint = 1;
 
 int cam_option = 1;
 int no_op = 1;
@@ -151,6 +157,9 @@ void draw() {
     for(int i = 0; i < F.size(); i++)
         F[i].draw(VP);
     F_meter.draw(d_VP);
+    for(int i = 0; i < Enemy_arr.size(); i++)
+        Enemy_arr[i].draw(VP);
+    arrow.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -351,6 +360,17 @@ void tick_elements() {
     fuel_count -= Plane.speed;
     F_meter.tick(fuel_count);
 
+    for(int i = 0; i < Enemy_arr.size(); i++)
+        Enemy_arr[i].tick();
+
+    Point Checkpoint, plane;
+    Checkpoint.x = Enemy_arr[Cur_checkpoint].position.x;
+    Checkpoint.y = Enemy_arr[Cur_checkpoint].position.y;
+    Checkpoint.z = Enemy_arr[Cur_checkpoint].position.z;
+    plane.x = Plane.position.x;
+    plane.y = Plane.position.y;
+    plane.z = Plane.position.z;
+    arrow.tick(Checkpoint, plane, Plane.rot_y);
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -383,14 +403,28 @@ void initGL(GLFWwindow *window, int width, int height) {
             int type = rand()%10;
             if(type < 3)
                  HillArr.push_back(Hill(x, z, 'v'));
-            else
+            else{
                  HillArr.push_back(Hill(x, z, 'h'));
-
+                 if( HillArr[HillArr.size() - 1].TopRadius >= 4 )
+                    Possible_base.push_back(HillArr.size() - 1);
+            }
             x = left + 25 + rand()%50;
             z = bottom + 25 + rand()%50;
             int y = 10 + rand()%35;
             F.push_back(Fuel(x, y, z));
         }
+    }
+
+    while(1){
+        if(Enemy_arr.size() == 3)
+            break;
+        int ind = rand() % Possible_base.size();
+        int hill_ind = Possible_base[ind];
+        float x = HillArr[hill_ind].position.x;
+        float y = HillArr[hill_ind].Height/2 + 1.0;
+        float z = HillArr[hill_ind].position.z;
+        Enemy_arr.push_back(Enemy(x, y, z));
+        Possible_base.erase(Possible_base.begin() + ind);
     }
 
     Sc = Score(-3.8, -3.5);
@@ -399,6 +433,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     C = Compass(-3.0, 3.0);
     Spd = Speedometer(2.2, -3.5);
     F_meter = Fuelmeter(-2.8, -1.0);
+    arrow = Arrow(10, 10, 10);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -453,11 +488,6 @@ int main(int argc, char **argv) {
 
     quit(window);
 }
-
-// bool detect_collision(bounding_box_t a, bounding_box_t b) {
-//     return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
-//            (abs(a.y - b.y) * 2 < (a.height + b.height));
-// }
 
 void reset_screen() {
     float top    = screen_center_y + 4 / screen_zoom;

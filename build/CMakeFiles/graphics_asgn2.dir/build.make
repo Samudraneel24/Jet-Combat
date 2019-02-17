@@ -153,9 +153,33 @@ CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o.provides: CMakeFiles/graphics_a
 CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o.provides.build: CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o
 
 
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o: ../src/arrow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.cpp"
+
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.cpp" > CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.i
+
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/arrow.cpp" -o CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.s
+
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.requires
+
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.provides: CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.provides
+
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.provides.build: CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o
+
+
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ball.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o.provides.build: CMakeFiles/graphics
 
 CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o: ../src/bomb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/bomb.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o.provides.build: CMakeFiles/graphics
 
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.o: ../src/color.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/color.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/color.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/color.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/color.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/graphics_asgn2.dir/src/color.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/compass.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o.provides.build: CMakeFiles/graph
 
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/detect_collision.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.i: cmake_force
@@ -273,9 +297,33 @@ CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o.provides: CMakeFiles/gr
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o.provides.build: CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o
 
 
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: ../src/enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.cpp"
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.cpp" > CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.i
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/enemy.cpp" -o CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.s
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.requires
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.provides: CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.provides
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.provides.build: CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o
+
+
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/fuel.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o.provides.build: CMakeFiles/graphics
 
 CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/fuelmeter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/fuelmeter.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o.provides.build: CMakeFiles/gra
 
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/hill.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o.provides.build: CMakeFiles/graphics
 
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/input.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/input.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/input.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.i: cmake_force
@@ -371,7 +419,7 @@ CMakeFiles/graphics_asgn2.dir/src/input.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/main.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.i: cmake_force
@@ -395,7 +443,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o.provides.build: CMakeFiles/graphics
 
 CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o: ../src/missile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/missile.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/missile.cpp.i: cmake_force
@@ -419,7 +467,7 @@ CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o.provides.build: CMakeFiles/graph
 
 CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/nonedit.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.i: cmake_force
@@ -443,7 +491,7 @@ CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o.provides.build: CMakeFiles/graph
 
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/other_handlers.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.i: cmake_force
@@ -467,7 +515,7 @@ CMakeFiles/graphics_asgn2.dir/src/other_handlers.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o: ../src/parachute.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/parachute.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.i: cmake_force
@@ -491,7 +539,7 @@ CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o.provides.build: CMakeFiles/gra
 
 CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/rectangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.i: cmake_force
@@ -515,7 +563,7 @@ CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o.provides.build: CMakeFiles/gra
 
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o: ../src/rectangle2d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.i: cmake_force
@@ -539,7 +587,7 @@ CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o.provides.build: CMakeFiles/g
 
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/score.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/score.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/score.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/score.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/score.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.i: cmake_force
@@ -563,7 +611,7 @@ CMakeFiles/graphics_asgn2.dir/src/score.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o: ../src/semicircle2d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/semicircle2d.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.i: cmake_force
@@ -587,7 +635,7 @@ CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o: ../src/sevenseg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/sevenseg.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.i: cmake_force
@@ -611,7 +659,7 @@ CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o.provides.build: CMakeFiles/grap
 
 CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o: ../src/speedometer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/speedometer.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.i: cmake_force
@@ -635,7 +683,7 @@ CMakeFiles/graphics_asgn2.dir/src/speedometer.cpp.o.provides.build: CMakeFiles/g
 
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o: ../src/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/timer.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/timer.cpp.i: cmake_force
@@ -659,7 +707,7 @@ CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o: CMakeFiles/graphics_asgn2.dir/flags.make
 CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o: ../src/triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o -c "/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/triangle.cpp"
 
 CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.i: cmake_force
@@ -687,11 +735,13 @@ graphics_asgn2_OBJECTS = \
 "CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o" \
+"CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/color.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o" \
+"CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o" \
 "CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o" \
@@ -717,11 +767,13 @@ graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/ThreeD.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o
+graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/color.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o
+graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o
@@ -741,7 +793,7 @@ graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/timer.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/src/triangle.cpp.o
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/build.make
 graphics_asgn2: CMakeFiles/graphics_asgn2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable graphics_asgn2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable graphics_asgn2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphics_asgn2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -753,11 +805,13 @@ CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/ThreeD
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/aeroplane.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/aim.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o.requires
+CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/bomb.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/color.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o.requires
+CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o.requires
 CMakeFiles/graphics_asgn2.dir/requires: CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o.requires

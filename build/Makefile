@@ -231,6 +231,33 @@ src/altitude.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.s
 .PHONY : src/altitude.cpp.s
 
+src/arrow.o: src/arrow.cpp.o
+
+.PHONY : src/arrow.o
+
+# target to build an object file
+src/arrow.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o
+.PHONY : src/arrow.cpp.o
+
+src/arrow.i: src/arrow.cpp.i
+
+.PHONY : src/arrow.i
+
+# target to preprocess a source file
+src/arrow.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.i
+.PHONY : src/arrow.cpp.i
+
+src/arrow.s: src/arrow.cpp.s
+
+.PHONY : src/arrow.s
+
+# target to generate assembly for a file
+src/arrow.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.s
+.PHONY : src/arrow.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -365,6 +392,33 @@ src/detect_collision.s: src/detect_collision.cpp.s
 src/detect_collision.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.s
 .PHONY : src/detect_collision.cpp.s
+
+src/enemy.o: src/enemy.cpp.o
+
+.PHONY : src/enemy.o
+
+# target to build an object file
+src/enemy.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o
+.PHONY : src/enemy.cpp.o
+
+src/enemy.i: src/enemy.cpp.i
+
+.PHONY : src/enemy.i
+
+# target to preprocess a source file
+src/enemy.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.i
+.PHONY : src/enemy.cpp.i
+
+src/enemy.s: src/enemy.cpp.s
+
+.PHONY : src/enemy.s
+
+# target to generate assembly for a file
+src/enemy.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.s
+.PHONY : src/enemy.cpp.s
 
 src/fuel.o: src/fuel.cpp.o
 
@@ -846,6 +900,9 @@ help:
 	@echo "... src/altitude.o"
 	@echo "... src/altitude.i"
 	@echo "... src/altitude.s"
+	@echo "... src/arrow.o"
+	@echo "... src/arrow.i"
+	@echo "... src/arrow.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
@@ -861,6 +918,9 @@ help:
 	@echo "... src/detect_collision.o"
 	@echo "... src/detect_collision.i"
 	@echo "... src/detect_collision.s"
+	@echo "... src/enemy.o"
+	@echo "... src/enemy.i"
+	@echo "... src/enemy.s"
 	@echo "... src/fuel.o"
 	@echo "... src/fuel.i"
 	@echo "... src/fuel.s"

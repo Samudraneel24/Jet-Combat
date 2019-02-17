@@ -19,6 +19,10 @@ CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o: ../src/rectangle2d.h
 CMakeFiles/graphics_asgn2.dir/src/altitude.cpp.o: ../src/sevenseg.h
 
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o: ../src/arrow.cpp
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o: ../src/arrow.h
+CMakeFiles/graphics_asgn2.dir/src/arrow.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/ball.cpp.o: ../src/main.h
@@ -37,6 +41,11 @@ CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.cpp
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/main.h
+
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: ../src/ThreeD.h
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: ../src/enemy.cpp
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: ../src/enemy.h
+CMakeFiles/graphics_asgn2.dir/src/enemy.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.cpp
@@ -60,10 +69,12 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aim.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/altitude.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/enemy.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuelmeter.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
