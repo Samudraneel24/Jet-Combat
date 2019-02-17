@@ -17,7 +17,7 @@ public:
     void left();
     void up();
     void rot_up();
-    float speedx, speedy, speedz, speedxz;
+    float speedx, speedy, speedz, speedxz, speed;
     float rot_x, rot_y, rot_z;
 private:
     VAO* object1;

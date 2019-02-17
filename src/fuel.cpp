@@ -5,6 +5,8 @@
 
 Fuel::Fuel(float x, float y, float z){
     this->position = glm::vec3(x, y, z);
+    this->radius = 1.5;
+    this->length = 3.0;
     this->T = ThreeD(25, x, y, z, 1.5, 1.5, 3.0, 0, 0, 0, COLOR_YELLOW, COLOR_YELLOW, COLOR_REALBLACK);
 }
 

@@ -60,6 +60,10 @@ void SevenSeg::draw(glm::mat4 VP, char c) {
         this->on = "1100111";
     else if(c == 'd')
         this->on = "0111101";
+    else if(c == 'u')
+        this->on = "1111100";
+    else if(c == 'f')
+        this->on = "1100011";
     for(int i=0; i<7; i++)
         if(this->on[i] == '1')
             this->R[i].draw(VP);

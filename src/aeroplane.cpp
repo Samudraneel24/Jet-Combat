@@ -195,6 +195,14 @@ void Aeroplane::tick(int no_op) {
         this->position.y = 50;
         this->speedy = 0;
     }
+    if(this->speedxz > 0 && this->speedy > 0)
+        this->speed = sqrt(this->speedy*this->speedy + this->speedxz*this->speedxz);
+    else if(this->speedxz > 0)
+        this->speed = this->speedxz;
+    else if(this->speedy > 0)
+        this->speed = this->speedy;
+    else
+        this->speed = 0;
 }
 
 void Aeroplane::forward(){

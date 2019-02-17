@@ -43,6 +43,12 @@ CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.cpp
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn2.dir/src/fuel.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/fuelmeter.cpp
+CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/fuelmeter.h
+CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/rectangle2d.h
+CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o: ../src/sevenseg.h
+
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.cpp
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
@@ -59,6 +65,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuel.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuelmeter.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h

@@ -15,6 +15,7 @@
 #include "bomb.h"
 #include "speedometer.h"
 #include "fuel.h"
+#include "fuelmeter.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ Altitude Alt;
 Aim A;
 Compass C;
 Speedometer Spd;
+Fuelmeter F_meter;
 std::vector<Parachute> Par_arr;
 std::vector<Missile> M;
 std::vector<Bomb> B;
@@ -46,6 +48,7 @@ float camera_rotation_angle = 0;
 int counter = 0;
 int tick_counter = 0;
 int missile_interval = 0, bomb_interval = 0;
+float fuel_count = 500.0;
 
 int cam_option = 1;
 int no_op = 1;
@@ -147,6 +150,7 @@ void draw() {
     Spd.draw(d_VP);
     for(int i = 0; i < F.size(); i++)
         F[i].draw(VP);
+    F_meter.draw(d_VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -213,6 +217,7 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
+    // cout<<fuel_count<<endl;
 
     bounding_box_t Plane_bound;
     Plane_bound.x = Plane.position.x + 1.5*sin(Plane.rot_y*(M_PI/180.0));
@@ -324,13 +329,28 @@ void tick_elements() {
             Volcano_bound.height = 1100;
             Volcano_bound.width = 2*HillArr[i].BaseRadius;
             Volcano_bound.length = 2*HillArr[i].BaseRadius;
-            if(detect_collision(Volcano_bound, Plane_bound))
-                cout<<i<<endl;
+            // if(detect_collision(Volcano_bound, Plane_bound))
+                // cout<<i<<endl;
         }
 
-    for(int i = 0; i < F.size(); i++)
+    for(int i = 0; i < F.size(); i++){
         F[i].tick();
-    
+        bounding_box_t Fuel_bound;
+        Fuel_bound.x = F[i].position.x - F[i].radius;
+        Fuel_bound.y = F[i].position.y - F[i].length/2;
+        Fuel_bound.z = F[i].position.z - F[i].radius;
+        Fuel_bound.height = F[i].length;
+        Fuel_bound.width = Fuel_bound.length = F[i].radius*2;
+        if(detect_collision(Fuel_bound, Plane_bound)){
+            F.erase(F.begin() + i);
+            i--;
+            fuel_count = min(500.0, fuel_count + 250.0);
+        }
+    }
+    // cout<<Plane.speed<<endl;
+    fuel_count -= Plane.speed;
+    F_meter.tick(fuel_count);
+
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -378,6 +398,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     A = Aim(6);
     C = Compass(-3.0, 3.0);
     Spd = Speedometer(2.2, -3.5);
+    F_meter = Fuelmeter(-2.8, -1.0);
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
