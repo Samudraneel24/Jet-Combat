@@ -38,6 +38,10 @@ CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.cpp
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn2.dir/src/compass.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/cube.cpp.o: ../src/cube.cpp
+CMakeFiles/graphics_asgn2.dir/src/cube.cpp.o: ../src/cube.h
+CMakeFiles/graphics_asgn2.dir/src/cube.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.cpp
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/detect_collision.cpp.o: ../src/main.h
@@ -73,6 +77,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/arrow.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/bomb.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/compass.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/cube.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/detect_collision.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/enemy.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuel.h

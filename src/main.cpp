@@ -18,6 +18,7 @@
 #include "fuelmeter.h"
 #include "enemy.h"
 #include "arrow.h"
+#include "cube.h"
 
 using namespace std;
 
@@ -47,6 +48,7 @@ std::vector<Fuel> F;
 std::vector<int> Possible_base;
 std::vector<Enemy> Enemy_arr;
 Arrow arrow;
+std::vector<Cube> Enemy_missile;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -161,6 +163,8 @@ void draw() {
     // for(int i = 0; i < Enemy_arr.size(); i++)
     Enemy_arr[Cur_checkpoint].draw(VP);
     arrow.draw(VP);
+    for(int i = 0; i < Enemy_missile.size(); i++)
+        Enemy_missile[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -376,6 +380,32 @@ void tick_elements() {
         Cur_checkpoint++;
         if(Cur_checkpoint == 3){
             gamewon = 1;
+        }
+    }
+    if(tick_counter % 50 == 0){
+        float x = Enemy_arr[Cur_checkpoint].position.x;
+        float y = Enemy_arr[Cur_checkpoint].position.y;
+        float z = Enemy_arr[Cur_checkpoint].position.z;
+        float dest_x = Plane.position.x;
+        float dest_y = Plane.position.y;
+        float dest_z = Plane.position.z;
+        float del_x = dest_x - x;
+        float del_y = dest_y - y;
+        float del_z = dest_z - z;
+        float dist = sqrt(del_x*del_x + del_y*del_y + del_z*del_z);
+        if(dist < 150.0){
+            float speedx = (del_x*1.5)/dist;
+            float speedy = (del_y*1.5)/dist;
+            float speedz = (del_z*1.5)/dist;
+            Enemy_missile.push_back(Cube(x, y, z, speedx, speedy, speedz));
+        }
+    }
+
+    for(int i = 0; i < Enemy_missile.size(); i++){
+        int destroy = Enemy_missile[i].tick();
+        if(destroy == 1){
+            Enemy_missile.erase(Enemy_missile.begin() + i);
+            i--;
         }
     }
 

@@ -366,6 +366,33 @@ src/compass.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/compass.cpp.s
 .PHONY : src/compass.cpp.s
 
+src/cube.o: src/cube.cpp.o
+
+.PHONY : src/cube.o
+
+# target to build an object file
+src/cube.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/cube.cpp.o
+.PHONY : src/cube.cpp.o
+
+src/cube.i: src/cube.cpp.i
+
+.PHONY : src/cube.i
+
+# target to preprocess a source file
+src/cube.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/cube.cpp.i
+.PHONY : src/cube.cpp.i
+
+src/cube.s: src/cube.cpp.s
+
+.PHONY : src/cube.s
+
+# target to generate assembly for a file
+src/cube.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/cube.cpp.s
+.PHONY : src/cube.cpp.s
+
 src/detect_collision.o: src/detect_collision.cpp.o
 
 .PHONY : src/detect_collision.o
@@ -915,6 +942,9 @@ help:
 	@echo "... src/compass.o"
 	@echo "... src/compass.i"
 	@echo "... src/compass.s"
+	@echo "... src/cube.o"
+	@echo "... src/cube.i"
+	@echo "... src/cube.s"
 	@echo "... src/detect_collision.o"
 	@echo "... src/detect_collision.i"
 	@echo "... src/detect_collision.s"
