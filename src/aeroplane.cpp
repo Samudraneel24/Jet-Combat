@@ -177,7 +177,7 @@ void Aeroplane::tick(int no_op) {
         this->speedxz = 0.0;
     if(this->speedxz > 0.3)
         this->speedxz = 0.3;
-    this->speedy -= 0.004;
+    this->speedy -= 0.002;
     if(no_op == 1){
         if(this->rot_z < 0.0)
             this->rot_z += 2.0;

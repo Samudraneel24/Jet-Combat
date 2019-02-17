@@ -555,6 +555,33 @@ src/input.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
 
+src/lives.o: src/lives.cpp.o
+
+.PHONY : src/lives.o
+
+# target to build an object file
+src/lives.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o
+.PHONY : src/lives.cpp.o
+
+src/lives.i: src/lives.cpp.i
+
+.PHONY : src/lives.i
+
+# target to preprocess a source file
+src/lives.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/lives.cpp.i
+.PHONY : src/lives.cpp.i
+
+src/lives.s: src/lives.cpp.s
+
+.PHONY : src/lives.s
+
+# target to generate assembly for a file
+src/lives.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn2.dir/build.make CMakeFiles/graphics_asgn2.dir/src/lives.cpp.s
+.PHONY : src/lives.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -963,6 +990,9 @@ help:
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
+	@echo "... src/lives.o"
+	@echo "... src/lives.i"
+	@echo "... src/lives.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

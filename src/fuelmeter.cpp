@@ -31,6 +31,6 @@ void Fuelmeter::tick(float fuel) {
     for(int i=0; i < 4; i++)
         this->Character[i].tick();
     this->Vert.tick();
-    this->Hor.position.y = (fuel/500.0)*1.5 + this->y - 2.2;
+    this->Hor.position.y = max(0.0, (fuel/500.0)*1.5) + this->y - 2.2;
     this->Hor.tick();
 }

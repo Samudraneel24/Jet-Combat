@@ -19,6 +19,7 @@
 #include "enemy.h"
 #include "arrow.h"
 #include "cube.h"
+#include "lives.h"
 
 using namespace std;
 
@@ -57,11 +58,14 @@ int tick_counter = 0;
 int missile_interval = 0, bomb_interval = 0;
 float fuel_count = 500.0;
 int Cur_checkpoint = 0;
-int gamewon = 0;
+int gamewon = 0, gameover = 0;
+int lives = 3;
+std::vector<Life> Life_arr;
 
 int cam_option = 1;
 int no_op = 1;
 int score = 0;
+int Water_counter = 0;
 // int altitude = 0;
 
 float cam_theta = 0, cam_phi = 0;
@@ -165,6 +169,8 @@ void draw() {
     arrow.draw(VP);
     for(int i = 0; i < Enemy_missile.size(); i++)
         Enemy_missile[i].draw(VP);
+    for(int i = 0; i < lives; i++)
+        Life_arr[i].draw(d_VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -214,9 +220,9 @@ void tick_input(GLFWwindow *window) {
     }
     if(w)
         Plane.rot_up();
-    if(i)
+    if(i && fuel_count > 0.0)
         Plane.forward();
-    if(k)
+    if(k && fuel_count > 0.0)
         Plane.up();
     if(d){
         Plane.right();
@@ -354,7 +360,7 @@ void tick_elements() {
             Volcano_bound.width = 2*HillArr[i].BaseRadius;
             Volcano_bound.length = 2*HillArr[i].BaseRadius;
             // if(detect_collision(Volcano_bound, Plane_bound))
-                // cout<<i<<endl;
+                // lives--;
         }
 
     for(int i = 0; i < F.size(); i++){
@@ -407,6 +413,31 @@ void tick_elements() {
             Enemy_missile.erase(Enemy_missile.begin() + i);
             i--;
         }
+        else{
+            bounding_box_t Missile_bound;
+            Missile_bound.x = Enemy_missile[i].position.x - 0.25;
+            Missile_bound.y = Enemy_missile[i].position.y - 0.25;
+            Missile_bound.z = Enemy_missile[i].position.z - 0.25;
+            Missile_bound.length = Missile_bound.width = Missile_bound.height = 0.5;
+            if(detect_collision(Missile_bound, Plane_bound)){
+                lives--;
+                Enemy_missile.erase(Enemy_missile.begin() + i);
+                i--;
+            }
+
+            for(int j = 0; j < HillArr.size(); j++){
+                bounding_box_t Hillbound;
+                Hillbound.x = HillArr[j].position.x - HillArr[j].BaseRadius;
+                Hillbound.z = HillArr[j].position.z - HillArr[j].BaseRadius;
+                Hillbound.y = 0;
+                Hillbound.height = HillArr[j].Height/2.0;
+                Hillbound.length = Hillbound.width = HillArr[j].BaseRadius*2.0;
+                if(detect_collision(Hillbound, Missile_bound)){
+                    Enemy_missile.erase(Enemy_missile.begin() + i);
+                    i--;
+                }
+            }
+        }
     }
 
     Point Checkpoint, plane;
@@ -417,6 +448,21 @@ void tick_elements() {
     plane.y = Plane.position.y;
     plane.z = Plane.position.z;
     arrow.tick(Checkpoint, plane, Plane.rot_y);
+
+    if(Plane.position.y <= 0.0){
+        Water_counter++;
+        if(Water_counter > 20){
+            lives = max(lives - 1, 0);
+            Water_counter = 0;
+        }
+    }
+    else
+        Water_counter = 0;
+
+    for(int i = 0; i < Life_arr.size(); i++)
+        Life_arr[i].tick();
+
+    // cout<<lives<<endl;
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -430,7 +476,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     // ball1       = Ball(0, 0, COLOR_RED);
     // C = ThreeD(50, 0, 0, 0, 0.5, 0.5, 3.0, COLOR_RED, COLOR_RED, COLOR_BLACK );
 
-    Plane = Aeroplane(0, 2, 0);
+    Plane = Aeroplane(0, 4, 0);
     Point a, b, c, d;
     a.x = -500, a.y = 0, a.z = -500;
     b.x = 500, b.y = 0, b.z = -500;
@@ -480,6 +526,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     Spd = Speedometer(2.2, -3.5);
     F_meter = Fuelmeter(-2.8, -1.0);
     arrow = Arrow(10, 10, 10);
+    for(int i = 0; i < 3; i++)
+        Life_arr.push_back(Life(-1.0 + 0.75*(float)i, -3.5));
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -514,9 +562,12 @@ int main(int argc, char **argv) {
     initGL (window, width, height);
 
     /* Draw in loop */
-    while (gamewon == 0 && !glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(window)) {
         // Process timers
-
+        if(gamewon == 1)
+            break;
+        if(gameover == 1)
+            break;
         if (t60.processTick()) {
             // 60 fps
             // OpenGL Draw commands

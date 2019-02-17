@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/fuelmeter.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/input.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/main.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/missile.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/nonedit.cpp.o"

@@ -69,6 +69,13 @@ CMakeFiles/graphics_asgn2.dir/src/hill.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn2.dir/src/input.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/lives.cpp
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/lives.h
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/rectangle2d.h
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/semicircle2d.h
+CMakeFiles/graphics_asgn2.dir/src/lives.cpp.o: ../src/sevenseg.h
+
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ThreeD.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aeroplane.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/aim.h
@@ -83,6 +90,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/enemy.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/fuelmeter.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/hill.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/lives.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/missile.h
