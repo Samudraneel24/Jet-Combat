@@ -23,6 +23,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn2.dir/src/parachute.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o"
+  "CMakeFiles/graphics_asgn2.dir/src/ring.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/score.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/semicircle2d.cpp.o"
   "CMakeFiles/graphics_asgn2.dir/src/sevenseg.cpp.o"

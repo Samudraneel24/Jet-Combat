@@ -267,6 +267,8 @@ cube.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/cube.h
 lives.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/lives.h
+ring.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ring.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 iostream
@@ -381,6 +383,16 @@ main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/rectangle2d.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ring.cpp
+ring.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ring.h
+main.h
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
+
+/home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/ring.h
 main.h
 /home/samudraneel/Sem-4/Graphics/Assignment 2/Jet-Fighter-Plane-Game/src/main.h
 

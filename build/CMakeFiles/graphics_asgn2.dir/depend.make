@@ -97,6 +97,7 @@ CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/missile.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/rectangle2d.h
+CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/ring.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/score.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/semicircle2d.h
 CMakeFiles/graphics_asgn2.dir/src/main.cpp.o: ../src/sevenseg.h
@@ -125,6 +126,10 @@ CMakeFiles/graphics_asgn2.dir/src/rectangle.cpp.o: ../src/rectangle.h
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o: ../src/rectangle2d.cpp
 CMakeFiles/graphics_asgn2.dir/src/rectangle2d.cpp.o: ../src/rectangle2d.h
+
+CMakeFiles/graphics_asgn2.dir/src/ring.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn2.dir/src/ring.cpp.o: ../src/ring.cpp
+CMakeFiles/graphics_asgn2.dir/src/ring.cpp.o: ../src/ring.h
 
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn2.dir/src/score.cpp.o: ../src/rectangle2d.h

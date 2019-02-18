@@ -20,6 +20,7 @@
 #include "arrow.h"
 #include "cube.h"
 #include "lives.h"
+#include "ring.h"
 
 using namespace std;
 
@@ -50,6 +51,7 @@ std::vector<int> Possible_base;
 std::vector<Enemy> Enemy_arr;
 Arrow arrow;
 std::vector<Cube> Enemy_missile;
+std::vector<Ring> Smoke_ring;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -171,6 +173,8 @@ void draw() {
         Enemy_missile[i].draw(VP);
     for(int i = 0; i < lives; i++)
         Life_arr[i].draw(d_VP);
+    for(int i = 0; i < Smoke_ring.size(); i++)
+        Smoke_ring[i].draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -237,15 +241,22 @@ void tick_input(GLFWwindow *window) {
 }
 
 void tick_elements() {
-    // cout<<fuel_count<<endl;
 
-    bounding_box_t Plane_bound;
-    Plane_bound.x = Plane.position.x + 1.5*sin(Plane.rot_y*(M_PI/180.0));
-    Plane_bound.y = Plane.position.y - 0.5;
-    Plane_bound.z = Plane.position.z - 1.5*cos(Plane.rot_y*(M_PI/180.0));
-    Plane_bound.height = 1;
-    Plane_bound.width = 4*sin(Plane.rot_y*(M_PI/180.0));
-    Plane_bound.length = 4*cos(Plane.rot_y*(M_PI/180.0));
+    bounding_box_t Plane_bound[4];
+    for(int i = 0; i < 4; i++){
+        Plane_bound[i].x = Plane.position.x + 1.5*sin(Plane.rot_y*(M_PI/180.0)) - (float)(i) * sin(Plane.rot_y*(M_PI/180.0));
+        Plane_bound[i].y = Plane.position.y - 0.5;
+        Plane_bound[i].z = Plane.position.z - 1.5*cos(Plane.rot_y*(M_PI/180.0)) + (float)(i) * cos(Plane.rot_y*(M_PI/180.0));
+        Plane_bound[i].height = 1;
+        Plane_bound[i].width = abs(sin(Plane.rot_y*(M_PI/180.0)));
+        Plane_bound[i].length = abs(cos(Plane.rot_y*(M_PI/180.0)));
+    }
+    // Plane_bound.x = Plane.position.x + 1.5*sin(Plane.rot_y*(M_PI/180.0));
+    // Plane_bound.y = Plane.position.y - 0.5;
+    // Plane_bound.z = Plane.position.z - 1.5*cos(Plane.rot_y*(M_PI/180.0));
+    // Plane_bound.height = 1;
+    // Plane_bound.width = 4*sin(Plane.rot_y*(M_PI/180.0));
+    // Plane_bound.length = 4*cos(Plane.rot_y*(M_PI/180.0));
 
     missile_interval++, bomb_interval++;
     tick_counter++;
@@ -350,7 +361,7 @@ void tick_elements() {
         }
     }
 
-    for(int i = 0; i < HillArr.size(); i++)
+    for(int i = 0; i < HillArr.size(); i++){
         if(HillArr[i].type == 'v'){
             bounding_box_t Volcano_bound;
             Volcano_bound.x = HillArr[i].position.x - HillArr[i].BaseRadius;
@@ -359,9 +370,29 @@ void tick_elements() {
             Volcano_bound.height = 1100;
             Volcano_bound.width = 2*HillArr[i].BaseRadius;
             Volcano_bound.length = 2*HillArr[i].BaseRadius;
-            // if(detect_collision(Volcano_bound, Plane_bound))
-                // lives--;
+            for(int j = 0; j < 4; j++){
+                if(detect_collision(Volcano_bound, Plane_bound[j])){
+                    lives--;
+                    break;
+                }
+            }
         }
+        else{
+            bounding_box_t Hill_bound;
+            Hill_bound.x = HillArr[i].position.x - HillArr[i].BaseRadius;
+            Hill_bound.y = 0;
+            Hill_bound.z = HillArr[i].position.z - HillArr[i].BaseRadius;
+            Hill_bound.height = HillArr[i].Height;
+            Hill_bound.width = 2*HillArr[i].BaseRadius;
+            Hill_bound.length = 2*HillArr[i].BaseRadius;
+            for(int j = 0; j < 4; j++){
+                if(detect_collision(Hill_bound, Plane_bound[j])){
+                    lives--;
+                    break;
+                }
+            }
+        }
+    }
 
     for(int i = 0; i < F.size(); i++){
         F[i].tick();
@@ -371,10 +402,13 @@ void tick_elements() {
         Fuel_bound.z = F[i].position.z - F[i].radius;
         Fuel_bound.height = F[i].length;
         Fuel_bound.width = Fuel_bound.length = F[i].radius*2;
-        if(detect_collision(Fuel_bound, Plane_bound)){
-            F.erase(F.begin() + i);
-            i--;
-            fuel_count = min(500.0, fuel_count + 250.0);
+        for(int j = 0; j < 4; j++){
+            if(detect_collision(Fuel_bound, Plane_bound[j])){
+                F.erase(F.begin() + i);
+                i--;
+                fuel_count = min(500.0, fuel_count + 250.0);
+                break;
+            }
         }
     }
     // cout<<Plane.speed<<endl;
@@ -388,7 +422,7 @@ void tick_elements() {
             gamewon = 1;
         }
     }
-    if(tick_counter % 50 == 0){
+    if(tick_counter % 100 == 0){
         float x = Enemy_arr[Cur_checkpoint].position.x;
         float y = Enemy_arr[Cur_checkpoint].position.y;
         float z = Enemy_arr[Cur_checkpoint].position.z;
@@ -419,24 +453,15 @@ void tick_elements() {
             Missile_bound.y = Enemy_missile[i].position.y - 0.25;
             Missile_bound.z = Enemy_missile[i].position.z - 0.25;
             Missile_bound.length = Missile_bound.width = Missile_bound.height = 0.5;
-            if(detect_collision(Missile_bound, Plane_bound)){
-                lives--;
-                Enemy_missile.erase(Enemy_missile.begin() + i);
-                i--;
-            }
-
-            for(int j = 0; j < HillArr.size(); j++){
-                bounding_box_t Hillbound;
-                Hillbound.x = HillArr[j].position.x - HillArr[j].BaseRadius;
-                Hillbound.z = HillArr[j].position.z - HillArr[j].BaseRadius;
-                Hillbound.y = 0;
-                Hillbound.height = HillArr[j].Height/2.0;
-                Hillbound.length = Hillbound.width = HillArr[j].BaseRadius*2.0;
-                if(detect_collision(Hillbound, Missile_bound)){
+            for( int j = 0; j < 4; j++){
+                if(detect_collision(Missile_bound, Plane_bound[j])){
+                    lives--;
                     Enemy_missile.erase(Enemy_missile.begin() + i);
                     i--;
+                    break;
                 }
             }
+
         }
     }
 
@@ -459,10 +484,28 @@ void tick_elements() {
     else
         Water_counter = 0;
 
+    for(int i = 0; i < Smoke_ring.size(); i++)
+        Smoke_ring[i].tick(Plane.rot_y);
+
     for(int i = 0; i < Life_arr.size(); i++)
         Life_arr[i].tick();
 
-    // cout<<lives<<endl;
+    if(lives == 0)
+        gameover = 1;
+
+    for(int i = 0; i < Smoke_ring.size(); i++){
+        bounding_box_t Smoke_bound;
+        Smoke_bound.x = Smoke_ring[i].position.x - 7.0;
+        Smoke_bound.y = Smoke_ring[i].position.y - 7.0;
+        Smoke_bound.z = Smoke_ring[i].position.z;
+        Smoke_bound.height = Smoke_bound.width = 14.0;
+        Smoke_bound.length = 0;
+        for(int j = 0;j < 4; j++)
+            if(detect_collision(Smoke_bound, Plane_bound[j])){
+                lives = min(lives + 1, 3);
+                break;
+            }
+    }
 }
 
 /* Initialize the OpenGL rendering properties */
@@ -506,6 +549,17 @@ void initGL(GLFWwindow *window, int width, int height) {
             F.push_back(Fuel(x, y, z));
         }
     }
+
+    for(int i = -4; i< 4; i++){
+        int left = i*125;
+        for(int j = -4; j <4; j++){
+            int bottom = j*125;
+            int x = left + 25 + rand()%50;
+            int y = 15 + rand()%50;
+            int z = bottom + 25 + rand()%50;
+            Smoke_ring.push_back(Ring(x, y, z, COLOR_GREY));
+        }
+    } 
 
     while(1){
         if(Enemy_arr.size() == 3)
@@ -564,10 +618,20 @@ int main(int argc, char **argv) {
     /* Draw in loop */
     while (!glfwWindowShouldClose(window)) {
         // Process timers
-        if(gamewon == 1)
+        if(gamewon == 1){
+            cout<<"\n\n\n\n\n\n";
+            cout<<"---------------------------------------------------------\n\n\n\n";
+            cout<<"\t\t\tYou Win !! !!\n\n\n\n";
+            cout<<"---------------------------------------------------------\n\n\n";
             break;
-        if(gameover == 1)
+        }
+        if(gameover == 1){
+            cout<<"\n\n\n\n\n\n";
+            cout<<"---------------------------------------------------------\n\n\n\n";
+            cout<<"\t\t\tGame over !!\n\n\n\n";
+            cout<<"---------------------------------------------------------\n\n\n";
             break;
+        }
         if (t60.processTick()) {
             // 60 fps
             // OpenGL Draw commands
