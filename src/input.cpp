@@ -85,4 +85,11 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
     // Do something
+    if(cam_option == 5){
+        if(yoffset > 0 && FoV < 75.0)
+            FoV += 0.2;
+        if(yoffset < 0 && FoV > 25.0)
+            FoV -= 0.2;
+        reset_screen();
+    }
 }

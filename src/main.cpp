@@ -72,6 +72,10 @@ int Water_counter = 0;
 
 float cam_theta = 0, cam_phi = 0;
 
+float prev_time, delta_time;
+
+float FoV = 45.0;
+
 Timer t60(1.0 / 60);
 
 /* Render the scene with openGL */
@@ -166,7 +170,6 @@ void draw() {
     for(int i = 0; i < F.size(); i++)
         F[i].draw(VP);
     F_meter.draw(d_VP);
-    // for(int i = 0; i < Enemy_arr.size(); i++)
     Enemy_arr[Cur_checkpoint].draw(VP);
     arrow.draw(VP);
     for(int i = 0; i < Enemy_missile.size(); i++)
@@ -192,6 +195,20 @@ void tick_input(GLFWwindow *window) {
     int k = glfwGetKey(window, GLFW_KEY_K);
     int i = glfwGetKey(window, GLFW_KEY_I);
     int b = glfwGetKey(window, GLFW_KEY_B);
+    int scroll = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_MIDDLE);
+    if(cam_option == 5){
+        double xpos, ypos;
+        glfwGetCursorPos(window, &xpos, &ypos);
+        delta_time = glfwGetTime() - prev_time;
+        if(xpos > 500 && xpos < 1000)
+            cam_phi -= delta_time;
+        else if(xpos < 500 && xpos > 0)
+            cam_phi += delta_time;
+        if(ypos > 500 && ypos < 1000)
+            cam_theta -= delta_time;
+        else if(ypos < 500 && ypos > 0)
+            cam_theta += delta_time;
+    }
 
     if (c && counter > 15) {
         if(cam_option == 1)
@@ -206,14 +223,6 @@ void tick_input(GLFWwindow *window) {
             cam_option = 1;
         counter = 0;
     }
-    if(left)
-        cam_theta -= 0.2;
-    if(right)
-        cam_theta += 0.2;
-    if(up)
-        cam_phi -= 0.2;
-    if(down)
-        cam_phi += 0.2;
     if(space && missile_interval > 15){
         missile_interval = 0;
         M.push_back(Missile(Plane.position.x, Plane.position.y, Plane.position.z, Plane.rot_y));
@@ -238,6 +247,8 @@ void tick_input(GLFWwindow *window) {
     }
     else
         no_op = 1;
+
+    prev_time = glfwGetTime();
 }
 
 void tick_elements() {
@@ -655,6 +666,6 @@ void reset_screen() {
     float bottom = screen_center_y - 4 / screen_zoom;
     float left   = screen_center_x - 4 / screen_zoom;
     float right  = screen_center_x + 4 / screen_zoom;
-    Matrices.projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 200.0f);
+    Matrices.projection = glm::perspective(glm::radians(FoV), 1.0f, 0.1f, 200.0f);
     Dashboard_matrix.projection = glm::ortho(left, right, bottom, top, 0.1f, 500.0f);
 }

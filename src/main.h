@@ -87,7 +87,8 @@ struct bounding_box_t {
 
 bool detect_collision(bounding_box_t a, bounding_box_t b);
 
-extern float screen_zoom, screen_center_x, screen_center_y;
+extern float screen_zoom, screen_center_x, screen_center_y, FoV;
+extern int cam_option;
 void reset_screen();
 
 // ---- Colors ----
